@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criar Conta — Burguer Express</title>
+  <meta name="description" content="Cadastre-se na Burguer Express para acompanhar seus pedidos e aproveitar promoções exclusivas.">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/cadastro.css">
+</head>
+<body>
+
+  <main class="auth-wrapper">
+    <div class="auth-card-signup">
+
+      <!-- CABEÇALHO COM LOGO -->
+      <header class="auth-header">
+        <a href="index.html" class="auth-logo-link" title="Voltar para a página inicial">
+          <img src="assets/images/logo.svg" alt="Burguer Express Logo" class="auth-logo-img">
+        </a>
+        <h1 class="auth-title">Crie sua conta</h1>
+        <p class="auth-subtitle">Preencha os dados abaixo para fazer seus pedidos rapidamente</p>
+      </header>
+
+      <!-- ESPAÇO VISUAL PARA MENSAGENS DE VALIDAÇÃO FUTURAS -->
+      <div id="signup-feedback" class="auth-alert-area" aria-live="polite">
+        <!-- Exemplo visual preparado para validação futura via JavaScript -->
+        <div class="alert-box alert-info" role="status">
+          <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+          <span>Todos os campos com asterisco (*) são de preenchimento obrigatório.</span>
+        </div>
+      </div>
+
+      <!-- FORMULÁRIO DE CADASTRO -->
+      <form action="#" method="post" class="auth-form" novalidate onsubmit="return false;">
+
+        <!-- Nome Completo -->
+        <div class="form-group">
+          <label for="signup-name" class="form-label">Nome Completo *</label>
+          <div class="input-icon-group">
+            <i class="fa-regular fa-user" aria-hidden="true"></i>
+            <input 
+              type="text" 
+              id="signup-name" 
+              name="fullname" 
+              class="form-input" 
+              placeholder="Seu nome completo" 
+              required 
+              autocomplete="name">
+          </div>
+        </div>
+
+        <!-- Linha: E-mail e Telefone -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="signup-email" class="form-label">E-mail *</label>
+            <div class="input-icon-group">
+              <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+              <input 
+                type="email" 
+                id="signup-email" 
+                name="email" 
+                class="form-input" 
+                placeholder="seu@email.com" 
+                required 
+                autocomplete="email">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="signup-phone" class="form-label">Telefone / WhatsApp *</label>
+            <div class="input-icon-group">
+              <i class="fa-solid fa-phone" aria-hidden="true"></i>
+              <input 
+                type="tel" 
+                id="signup-phone" 
+                name="phone" 
+                class="form-input" 
+                placeholder="(11) 99999-9999" 
+                required 
+                autocomplete="tel">
+            </div>
+          </div>
+        </div>
+
+        <!-- Linha: Senha e Confirmação de Senha -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="signup-password" class="form-label">Senha *</label>
+            <div class="input-icon-group">
+              <i class="fa-solid fa-lock" aria-hidden="true"></i>
+              <input 
+                type="password" 
+                id="signup-password" 
+                name="password" 
+                class="form-input" 
+                placeholder="Mínimo 6 caracteres" 
+                required 
+                autocomplete="new-password">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="signup-confirm-password" class="form-label">Confirmar Senha *</label>
+            <div class="input-icon-group">
+              <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+              <input 
+                type="password" 
+                id="signup-confirm-password" 
+                name="confirm_password" 
+                class="form-input" 
+                placeholder="Repita a senha" 
+                required 
+                autocomplete="new-password">
+            </div>
+          </div>
+        </div>
+
+        <!-- Termos de Uso -->
+        <div class="form-terms">
+          <input type="checkbox" id="terms-agree" name="terms" required>
+          <label for="terms-agree">
+            Li e concordo com os <a href="#">Termos de Uso</a> e a <a href="#">Política de Privacidade</a> da Burguer Express.
+          </label>
+        </div>
+
+        <!-- Botão Cadastrar -->
+        <button type="submit" class="btn btn-primary btn-block btn-lg">
+          <span>Cadastrar</span>
+          <i class="fa-solid fa-user-plus" aria-hidden="true"></i>
+        </button>
+
+      </form>
+
+      <!-- RODAPÉ DO CARD COM LINK PARA LOGIN -->
+      <footer class="auth-footer">
+        <span>Já tem uma conta cadastrada?</span>
+        <a href="login.html">Fazer Login</a>
+      </footer>
+
+    </div>
+
+    <!-- LINK PARA VOLTAR AO INÍCIO -->
+    <div class="auth-back-home">
+      <a href="index.html" class="auth-back-link">
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        <span>Voltar para a página inicial</span>
+      </a>
+    </div>
+  </main>
+
+  <script src="assets/js/cadastro.js"></script>
+</body>
+</html>
+

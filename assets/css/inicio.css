@@ -1,0 +1,284 @@
+/* ==========================================================================
+   BURGUER EXPRESS — INÍCIO (TELA PRINCIPAL)
+   Styles for index.html (Atendente Virtual para Lanchonete Física)
+   ========================================================================== */
+
+/* Hero Banner */
+.hero-banner {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  position: relative;
+  min-height: 340px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  padding: 44px 48px;
+  max-width: 540px;
+  z-index: 2;
+}
+
+.hero-subtitle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.hero-accent-line {
+  width: 24px;
+  height: 2px;
+  background-color: var(--primary);
+  border-radius: 2px;
+}
+
+.hero-subtitle {
+  font-size: 11.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  color: var(--primary);
+}
+
+.hero-title {
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.15;
+  letter-spacing: -0.6px;
+  margin-bottom: 14px;
+}
+
+.hero-title .highlight {
+  color: var(--primary);
+  display: block;
+}
+
+.hero-text {
+  font-size: 14.5px;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 26px;
+}
+
+.hero-btn {
+  padding: 13px 26px;
+  font-size: 14px;
+}
+
+.hero-image-wrapper {
+  flex: 1;
+  height: 360px;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-image-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 140px;
+  background: linear-gradient(to right, var(--bg-card), rgba(17, 23, 28, 0));
+  z-index: 1;
+}
+
+/* Mais Pedidos Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* Bottom Banner — Atendente Virtual na Lanchonete Física */
+.dining-banner {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  margin-top: 36px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 36px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dining-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  z-index: 2;
+}
+
+.dining-icon {
+  font-size: 38px;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.dining-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dining-tag {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--primary);
+  text-transform: uppercase;
+}
+
+.dining-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.2px;
+}
+
+.dining-desc {
+  font-size: 13.5px;
+  color: var(--text-muted);
+}
+
+.dining-center {
+  z-index: 2;
+  margin-left: 20px;
+}
+
+.dining-btn {
+  padding: 10px 22px;
+  font-size: 13px;
+  border-color: var(--primary);
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+.dining-right-bg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 320px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.dining-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  opacity: 0.85;
+}
+
+.dining-right-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 120px;
+  background: linear-gradient(to right, var(--bg-card), rgba(17, 23, 28, 0));
+  z-index: 1;
+}
+
+/* ==========================================================================
+   RESPONSIVENESS (Início)
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .hero-title {
+    font-size: 32px;
+  }
+  .hero-content {
+    padding: 36px 36px;
+    max-width: 480px;
+  }
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 991px) {
+  .hero-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding: 32px 24px 20px 24px;
+  }
+
+  .hero-image-wrapper {
+    width: 100%;
+    height: 240px;
+  }
+
+  .hero-image-wrapper::before {
+    width: 100%;
+    height: 80px;
+    top: 0;
+    background: linear-gradient(to bottom, var(--bg-card), rgba(17, 23, 28, 0));
+  }
+
+  .dining-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 24px 20px;
+  }
+
+  .dining-center {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .dining-btn {
+    width: 100%;
+  }
+
+  .dining-right-bg {
+    opacity: 0.2;
+    width: 200px;
+  }
+}
+
+@media (max-width: 640px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-title {
+    font-size: 26px;
+  }
+
+  .dining-left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}

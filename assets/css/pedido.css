@@ -1,0 +1,305 @@
+/* ==========================================================================
+   BURGUER EXPRESS — PEDIDO NA MESA (ATENDENTE VIRTUAL LOCAL)
+   Styles for pedido.html
+   ========================================================================== */
+
+/* Main Page Layout */
+.pedido-header {
+  margin-bottom: 28px;
+}
+
+.pedido-header h1 {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+}
+
+.pedido-header p {
+  color: var(--text-muted);
+  font-size: 14.5px;
+}
+
+/* Two-Column Grid */
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.checkout-main-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.checkout-side-col {
+  position: sticky;
+  top: 100px;
+}
+
+/* Section Card Inside Checkout */
+.checkout-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+}
+
+.checkout-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(41, 50, 58, 0.6);
+}
+
+.checkout-card-header i {
+  color: var(--primary);
+  font-size: 18px;
+}
+
+.checkout-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+/* Empty Cart State (Carrinho Zerado) */
+.empty-cart-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  background-color: var(--bg-main);
+  border: 1.5px dashed var(--border);
+  border-radius: var(--radius-md);
+  margin-bottom: 16px;
+}
+
+.empty-cart-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: rgba(255, 170, 22, 0.08);
+  border: 1px solid rgba(255, 170, 22, 0.2);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.empty-cart-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+
+.empty-cart-text {
+  font-size: 14px;
+  color: var(--text-muted);
+  max-width: 380px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Local Identification (Mesa e Salão) */
+.table-id-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.table-notice-box {
+  background-color: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  font-size: 13px;
+  color: #93C5FD;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Payment Methods Grid */
+.payment-methods-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.payment-method-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  padding: 16px 12px;
+  background-color: var(--bg-main);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.payment-method-card:hover {
+  border-color: var(--border-light);
+  transform: translateY(-2px);
+}
+
+.payment-method-card.active {
+  border-color: var(--primary);
+  background-color: rgba(255, 170, 22, 0.06);
+}
+
+.payment-method-card i {
+  font-size: 22px;
+  color: var(--primary);
+}
+
+.payment-method-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.payment-explanation {
+  background-color: rgba(255, 170, 22, 0.06);
+  border: 1px solid rgba(255, 170, 22, 0.25);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  font-size: 13px;
+  color: #FDE68A;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.45;
+}
+
+/* Summary Card */
+.order-summary-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 26px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.summary-header {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--text-main);
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 20px;
+}
+
+.summary-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14.5px;
+  color: var(--text-muted);
+}
+
+.summary-row span:last-child {
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.summary-divider {
+  height: 1px;
+  background-color: var(--border);
+  margin: 16px 0;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 24px;
+}
+
+.summary-total-val {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.kitchen-estimate-box {
+  background-color: var(--bg-main);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.kitchen-estimate-box i {
+  font-size: 20px;
+  color: var(--primary);
+}
+
+.kitchen-estimate-box div {
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.kitchen-estimate-box strong {
+  display: block;
+  font-size: 13.5px;
+  color: var(--text-main);
+}
+
+.summary-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ==========================================================================
+   RESPONSIVENESS (Pedido)
+   ========================================================================== */
+
+@media (max-width: 1080px) {
+  .checkout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout-side-col {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .table-id-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-methods-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

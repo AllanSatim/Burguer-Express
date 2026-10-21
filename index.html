@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burguer Express — Atendente Virtual na Lanchonete</title>
+  <meta name="description" content="Hamburgueria artesanal Burguer Express. Peça diretamente na sua mesa pelo nosso atendente virtual e informe como irá pagar ao pedir a conta.">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/inicio.css">
+</head>
+<body>
+
+  <div class="app-layout">
+
+    <!-- BARRA LATERAL (SIDEBAR) -->
+    <aside class="sidebar" aria-label="Menu Principal">
+      <div>
+        <a href="index.html" class="sidebar-brand" title="Burguer Express - Início">
+          <img src="assets/images/logo.svg" alt="Burguer Express Logo" class="logo-img">
+        </a>
+
+        <nav class="sidebar-nav">
+          <a href="index.html" class="nav-link active" title="Página Inicial">
+            <i class="fa-solid fa-house" aria-hidden="true"></i>
+            <span>Início</span>
+          </a>
+          <a href="cardapio.html" class="nav-link" title="Ver Cardápio Completo">
+            <i class="fa-solid fa-burger" aria-hidden="true"></i>
+            <span>Cardápio</span>
+          </a>
+          <a href="pedido.html" class="nav-link" title="Meu Pedido na Mesa">
+            <i class="fa-solid fa-receipt" aria-hidden="true"></i>
+            <span>Meu Pedido</span>
+          </a>
+          <a href="sobre.html" class="nav-link" title="Sobre a Burguer Express">
+            <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+            <span>Sobre</span>
+          </a>
+          <a href="contato.html" class="nav-link" title="Fale Conosco">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <span>Contato</span>
+          </a>
+          <!-- Link do Administrador inserido no Menu Principal -->
+          <a href="admin.html" class="nav-link nav-link-admin" title="Painel da Cozinha / Administração (Acesso liberado para testes)">
+            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+            <span>Painel Admin</span>
+            <span class="nav-badge-pill">Acesso</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Rodapé da barra lateral -->
+      <div class="sidebar-footer">
+        <img src="assets/images/burger-icon.svg" alt="" class="footer-icon" aria-hidden="true">
+        <p class="footer-text">Sabor, qualidade e aquele toque especial em cada mordida.</p>
+        <div class="accent-line" aria-hidden="true"></div>
+      </div>
+    </aside>
+
+    <!-- ÁREA PRINCIPAL -->
+    <div class="main-content">
+
+      <!-- CABEÇALHO SUPERIOR -->
+      <header class="top-header">
+        <div class="search-bar">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <input type="search" placeholder="Buscar no cardápio..." aria-label="Buscar produtos no cardápio">
+        </div>
+
+        <div class="header-actions">
+          <a href="pedido.html" class="header-icon-btn" title="Ver pedido da mesa" aria-label="Carrinho zerado">
+            <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+            <span class="badge-count">0</span>
+          </a>
+          <a href="login.html" class="header-icon-btn" title="Minha Conta / Entrar" aria-label="Perfil do usuário">
+            <i class="fa-regular fa-user" aria-hidden="true"></i>
+          </a>
+        </div>
+      </header>
+
+      <!-- CONTEÚDO DA PÁGINA -->
+      <main class="page-container">
+
+        <!-- BANNER HERO PRINCIPAL -->
+        <section class="hero-banner" aria-label="Destaque Principal">
+          <div class="hero-content">
+            <div class="hero-subtitle-wrapper">
+              <div class="hero-accent-line" aria-hidden="true"></div>
+              <span class="hero-subtitle">Hambúrgueres Artesanais</span>
+            </div>
+            <h1 class="hero-title">
+              O verdadeiro sabor
+              <span class="highlight">em cada mordida</span>
+            </h1>
+            <p class="hero-text">
+              Faça seu pedido diretamente na sua mesa pelo nosso atendente virtual. Ingredientes selecionados e carnes nobres grelhadas na hora para você.
+            </p>
+            <a href="cardapio.html" class="btn btn-primary hero-btn">
+              Ver Cardápio <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <div class="hero-image-wrapper">
+            <img src="assets/images/banner-burger.jpg" alt="Delicioso hambúrguer artesanal suculento com batatas fritas" class="hero-img">
+          </div>
+        </section>
+
+        <!-- SEÇÃO MAIS PEDIDOS -->
+        <section class="featured-section" aria-label="Mais Pedidos">
+          <div class="section-header">
+            <h2 class="section-title">Mais pedidos no salão</h2>
+            <a href="cardapio.html" class="section-link">
+              Ver todos <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <div class="products-grid">
+
+            <!-- Produto 1: Cheeseburger Clássico -->
+            <article class="product-card">
+              <div class="product-img-wrapper">
+                <img src="assets/images/burger-classic.jpg" alt="Cheeseburger Clássico" class="product-img">
+              </div>
+              <div class="product-content">
+                <h3 class="product-title">Cheeseburger Clássico</h3>
+                <p class="product-desc">Pão brioche, hambúrguer 180g, queijo cheddar, alface, tomate e molho especial.</p>
+                <div class="product-price">R$ 24,90</div>
+                <div class="product-actions">
+                  <div class="qty-selector" aria-label="Controle de quantidade">
+                    <button type="button" class="qty-btn" aria-label="Diminuir quantidade">−</button>
+                    <span class="qty-number">1</span>
+                    <button type="button" class="qty-btn" aria-label="Aumentar quantidade">+</button>
+                  </div>
+                  <button type="button" class="btn-add-product" aria-label="Adicionar Cheeseburger Clássico ao pedido">
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    <span>Adicionar</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Produto 2: Bacon Burger -->
+            <article class="product-card">
+              <div class="product-img-wrapper">
+                <img src="assets/images/burger-bacon.jpg" alt="Bacon Burger" class="product-img">
+              </div>
+              <div class="product-content">
+                <h3 class="product-title">Bacon Burger</h3>
+                <p class="product-desc">Pão brioche, hambúrguer 180g, queijo cheddar, bacon crocante, alface, tomate e molho especial.</p>
+                <div class="product-price">R$ 27,90</div>
+                <div class="product-actions">
+                  <div class="qty-selector" aria-label="Controle de quantidade">
+                    <button type="button" class="qty-btn" aria-label="Diminuir quantidade">−</button>
+                    <span class="qty-number">1</span>
+                    <button type="button" class="qty-btn" aria-label="Aumentar quantidade">+</button>
+                  </div>
+                  <button type="button" class="btn-add-product" aria-label="Adicionar Bacon Burger ao pedido">
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    <span>Adicionar</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Produto 3: Combo Duplo -->
+            <article class="product-card">
+              <div class="product-img-wrapper">
+                <img src="assets/images/burger-combo.jpg" alt="Combo Duplo" class="product-img">
+              </div>
+              <div class="product-content">
+                <h3 class="product-title">Combo Duplo</h3>
+                <p class="product-desc">2 hambúrgueres, queijo cheddar, bacon, fritas e refrigerante 350ml.</p>
+                <div class="product-price">R$ 42,90</div>
+                <div class="product-actions">
+                  <div class="qty-selector" aria-label="Controle de quantidade">
+                    <button type="button" class="qty-btn" aria-label="Diminuir quantidade">−</button>
+                    <span class="qty-number">1</span>
+                    <button type="button" class="qty-btn" aria-label="Aumentar quantidade">+</button>
+                  </div>
+                  <button type="button" class="btn-add-product" aria-label="Adicionar Combo Duplo ao pedido">
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    <span>Adicionar</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Produto 4: Batata Frita -->
+            <article class="product-card">
+              <div class="product-img-wrapper">
+                <img src="assets/images/fries.jpg" alt="Porção de Batata Frita" class="product-img">
+              </div>
+              <div class="product-content">
+                <h3 class="product-title">Batata Frita</h3>
+                <p class="product-desc">Porção de batatas fritas crocantes e sequinhas servidas na mesa.</p>
+                <div class="product-price">R$ 12,90</div>
+                <div class="product-actions">
+                  <div class="qty-selector" aria-label="Controle de quantidade">
+                    <button type="button" class="qty-btn" aria-label="Diminuir quantidade">−</button>
+                    <span class="qty-number">1</span>
+                    <button type="button" class="qty-btn" aria-label="Aumentar quantidade">+</button>
+                  </div>
+                  <button type="button" class="btn-add-product" aria-label="Adicionar Batata Frita ao pedido">
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    <span>Adicionar</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- BANNER INFERIOR — ATENDENTE VIRTUAL NA MESA (SUBSTITUIU ENTREGA) -->
+        <section class="dining-banner" aria-label="Atendimento na Mesa">
+          <div class="dining-left">
+            <div class="dining-icon" aria-hidden="true">
+              <i class="fa-solid fa-bell-concierge"></i>
+            </div>
+            <div class="dining-info">
+              <span class="dining-tag">Atendimento na Mesa</span>
+              <h2 class="dining-title">Peça na mesa com nosso Atendente Virtual!</h2>
+              <p class="dining-desc">Marque seus pedidos, escolha a forma de pagamento e receba quentinho na sua mesa.</p>
+            </div>
+          </div>
+
+          <div class="dining-center">
+            <a href="pedido.html" class="btn btn-outline dining-btn">
+              Fazer Pedido na Mesa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <div class="dining-right-bg" aria-hidden="true">
+            <img src="assets/images/delivery-banner.jpg" alt="" class="dining-bg-img">
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+  </div>
+
+  <script src="assets/js/inicio.js"></script>
+</body>
+</html>

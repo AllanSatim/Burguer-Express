@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Pedido na Mesa — Burguer Express</title>
+  <meta name="description" content="Atendente virtual da Burguer Express. Marque o pedido da sua mesa, defina a forma de pagamento e receba quentinho no local.">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/pedido.css">
+</head>
+<body>
+
+  <div class="app-layout">
+
+    <!-- BARRA LATERAL (SIDEBAR) -->
+    <aside class="sidebar" aria-label="Menu Principal">
+      <div>
+        <a href="index.html" class="sidebar-brand" title="Burguer Express - Início">
+          <img src="assets/images/logo.svg" alt="Burguer Express Logo" class="logo-img">
+        </a>
+
+        <nav class="sidebar-nav">
+          <a href="index.html" class="nav-link" title="Página Inicial">
+            <i class="fa-solid fa-house" aria-hidden="true"></i>
+            <span>Início</span>
+          </a>
+          <a href="cardapio.html" class="nav-link" title="Cardápio Completo">
+            <i class="fa-solid fa-burger" aria-hidden="true"></i>
+            <span>Cardápio</span>
+          </a>
+          <a href="pedido.html" class="nav-link active" title="Meu Pedido na Mesa">
+            <i class="fa-solid fa-receipt" aria-hidden="true"></i>
+            <span>Meu Pedido</span>
+          </a>
+          <a href="sobre.html" class="nav-link" title="Sobre a Burguer Express">
+            <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+            <span>Sobre</span>
+          </a>
+          <a href="contato.html" class="nav-link" title="Fale Conosco">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <span>Contato</span>
+          </a>
+          <!-- Link do Administrador inserido no Menu Principal -->
+          <a href="admin.html" class="nav-link nav-link-admin" title="Painel da Cozinha / Administração (Acesso liberado para testes)">
+            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+            <span>Painel Admin</span>
+            <span class="nav-badge-pill">Acesso</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Rodapé da barra lateral -->
+      <div class="sidebar-footer">
+        <img src="assets/images/burger-icon.svg" alt="" class="footer-icon" aria-hidden="true">
+        <p class="footer-text">Sabor, qualidade e aquele toque especial em cada mordida.</p>
+        <div class="accent-line" aria-hidden="true"></div>
+      </div>
+    </aside>
+
+    <!-- ÁREA PRINCIPAL -->
+    <div class="main-content">
+
+      <!-- CABEÇALHO SUPERIOR -->
+      <header class="top-header">
+        <div class="search-bar">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <input type="search" placeholder="Buscar no cardápio..." aria-label="Buscar produtos no cardápio">
+        </div>
+
+        <div class="header-actions">
+          <a href="pedido.html" class="header-icon-btn" title="Ver pedido da mesa" aria-label="Carrinho zerado">
+            <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+            <span class="badge-count">0</span>
+          </a>
+          <a href="login.html" class="header-icon-btn" title="Minha Conta / Entrar" aria-label="Perfil do usuário">
+            <i class="fa-regular fa-user" aria-hidden="true"></i>
+          </a>
+        </div>
+      </header>
+
+      <!-- CONTEÚDO PRINCIPAL DO PEDIDO -->
+      <main class="page-container">
+
+        <header class="pedido-header">
+          <h1>Meu Pedido na Mesa</h1>
+          <p>Atendente virtual: marque os itens da sua comanda, indique a mesa e como você vai pagar ao pedir a conta.</p>
+        </header>
+
+        <form action="#" method="post" class="checkout-grid" onsubmit="return false;">
+
+          <!-- COLUNA ESQUERDA: ITENS ZERADOS + IDENTIFICAÇÃO DA MESA + FORMA DE PAGAMENTO -->
+          <div class="checkout-main-col">
+
+            <!-- ITENS SELECIONADOS (ZERADOS INICIALMENTE) -->
+            <section class="checkout-card" aria-label="Itens do Pedido">
+              <div class="checkout-card-header">
+                <i class="fa-solid fa-receipt" aria-hidden="true"></i>
+                <h2 class="checkout-card-title">Itens da Comanda (0 itens)</h2>
+              </div>
+
+              <!-- ESTADO DO CARRINHO ZERADO (Sem informações pré-carregadas) -->
+              <div class="empty-cart-box">
+                <div class="empty-cart-icon" aria-hidden="true">
+                  <i class="fa-solid fa-basket-shopping"></i>
+                </div>
+                <h3 class="empty-cart-title">Sua comanda está vazia</h3>
+                <p class="empty-cart-text">
+                  Você ainda não adicionou nenhum hambúrguer, porção ou bebida. Acesse o cardápio para escolher o que vai pedir hoje.
+                </p>
+                <a href="cardapio.html" class="btn btn-primary btn-sm">
+                  <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+                  <span>Explorar Cardápio</span>
+                </a>
+              </div>
+
+              <!-- Estrutura demonstrativa pronta para quando itens forem adicionados via JavaScript pela equipe -->
+              <div id="cart-items-container" class="cart-items-list" style="display: none;">
+                <!-- Os itens adicionados no cardápio serão renderizados aqui dinamicamente -->
+              </div>
+            </section>
+
+            <!-- IDENTIFICAÇÃO DO LOCAL NA LANCHONETE (MESA / SALÃO) -->
+            <section class="checkout-card" aria-label="Identificação da Mesa">
+              <div class="checkout-card-header">
+                <i class="fa-solid fa-chair" aria-hidden="true"></i>
+                <h2 class="checkout-card-title">Identificação do seu Atendimento</h2>
+              </div>
+
+              <div class="table-notice-box">
+                <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                <span>Este pedido será preparado pela cozinha e servido diretamente na sua mesa no salão.</span>
+              </div>
+
+              <div class="table-id-grid">
+                <div class="form-group">
+                  <label for="table-number" class="form-label">Número da Mesa ou Balcão *</label>
+                  <div class="input-icon-group">
+                    <i class="fa-solid fa-tag" aria-hidden="true"></i>
+                    <input 
+                      type="text" 
+                      id="table-number" 
+                      name="table-number" 
+                      class="form-input" 
+                      placeholder="Ex: Mesa 04 (ou Balcão 02)" 
+                      required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="client-name" class="form-label">Nome do Cliente *</label>
+                  <div class="input-icon-group">
+                    <i class="fa-regular fa-user" aria-hidden="true"></i>
+                    <input 
+                      type="text" 
+                      id="client-name" 
+                      name="client-name" 
+                      class="form-input" 
+                      placeholder="Seu nome para a comanda" 
+                      required>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- OBSERVAÇÕES PARA A COZINHA -->
+            <section class="checkout-card" aria-label="Observações para a cozinha">
+              <div class="checkout-card-header">
+                <i class="fa-regular fa-comment-dots" aria-hidden="true"></i>
+                <h2 class="checkout-card-title">Observações para a Cozinha</h2>
+              </div>
+
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="order-notes" class="form-label">
+                  Preferências de preparo (opcional)
+                </label>
+                <textarea id="order-notes" name="order-notes" rows="3" class="form-textarea" placeholder="Ex: Ponto da carne bem passado, tirar a cebola, maionese servida à parte..."></textarea>
+              </div>
+            </section>
+
+            <!-- FORMA DE PAGAMENTO (COMO VAI PAGAR AO PEDIR A CONTA) -->
+            <section class="checkout-card" aria-label="Forma de Pagamento">
+              <div class="checkout-card-header">
+                <i class="fa-solid fa-wallet" aria-hidden="true"></i>
+                <h2 class="checkout-card-title">Forma de Pagamento (Ao Pedir a Conta)</h2>
+              </div>
+
+              <div class="payment-methods-grid">
+
+                <label class="payment-method-card active">
+                  <input type="radio" name="payment-method" value="credit" checked style="display: none;">
+                  <i class="fa-regular fa-credit-card" aria-hidden="true"></i>
+                  <span class="payment-method-title">Cartão Crédito</span>
+                </label>
+
+                <label class="payment-method-card">
+                  <input type="radio" name="payment-method" value="debit" style="display: none;">
+                  <i class="fa-solid fa-credit-card" aria-hidden="true"></i>
+                  <span class="payment-method-title">Cartão Débito</span>
+                </label>
+
+                <label class="payment-method-card">
+                  <input type="radio" name="payment-method" value="pix" style="display: none;">
+                  <i class="fa-brands fa-pix" aria-hidden="true"></i>
+                  <span class="payment-method-title">PIX</span>
+                </label>
+
+                <label class="payment-method-card">
+                  <input type="radio" name="payment-method" value="cash" style="display: none;">
+                  <i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i>
+                  <span class="payment-method-title">Dinheiro</span>
+                </label>
+
+              </div>
+
+              <div class="payment-explanation">
+                <i class="fa-solid fa-circle-question" aria-hidden="true"></i>
+                <span>
+                  <strong>Como funciona:</strong> você seleciona a forma de pagamento agora. Depois que você comer e for pedir a conta, a equipe já sabe exatamente como você vai pagar, agilizando seu fechamento na mesa!
+                </span>
+              </div>
+            </section>
+
+          </div>
+
+          <!-- COLUNA DIREITA: RESUMO DA COMANDA (ZERADO) -->
+          <div class="checkout-side-col">
+            <aside class="order-summary-card" aria-label="Resumo dos Valores">
+              <h3 class="summary-header">Resumo da Comanda</h3>
+
+              <div class="summary-rows">
+                <div class="summary-row">
+                  <span>Itens selecionados</span>
+                  <span>0 produtos</span>
+                </div>
+                <div class="summary-row">
+                  <span>Subtotal</span>
+                  <span>R$ 0,00</span>
+                </div>
+                <div class="summary-row">
+                  <span>Consumo no local</span>
+                  <span style="color: var(--success);">Sem taxas adicionais</span>
+                </div>
+              </div>
+
+              <div class="summary-divider"></div>
+
+              <div class="summary-total">
+                <span>Total a pagar</span>
+                <span class="summary-total-val">R$ 0,00</span>
+              </div>
+
+              <!-- Estimativa de preparo na cozinha -->
+              <div class="kitchen-estimate-box">
+                <i class="fa-solid fa-fire-burner" aria-hidden="true"></i>
+                <div>
+                  <span>Previsão de preparo</span>
+                  <strong>15 a 20 minutos na chapa</strong>
+                </div>
+              </div>
+
+              <!-- Ações -->
+              <div class="summary-buttons">
+                <button type="submit" class="btn btn-primary btn-block btn-lg">
+                  <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                  <span>Enviar Pedido à Cozinha</span>
+                </button>
+                <a href="cardapio.html" class="btn btn-secondary btn-block">
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                  <span>Escolher no Cardápio</span>
+                </a>
+              </div>
+            </aside>
+          </div>
+
+        </form>
+
+      </main>
+    </div>
+
+  </div>
+
+  <script src="assets/js/pedido.js"></script>
+</body>
+</html>

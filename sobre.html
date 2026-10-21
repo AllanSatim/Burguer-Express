@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Nós — Burguer Express</title>
+  <meta name="description" content="Conheça a história da Burguer Express, nossa paixão por hambúrgueres artesanais e o ambiente moderno da nossa lanchonete física.">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/sobre.css">
+</head>
+<body>
+
+  <div class="app-layout">
+
+    <!-- BARRA LATERAL (SIDEBAR) -->
+    <aside class="sidebar" aria-label="Menu Principal">
+      <div>
+        <a href="index.html" class="sidebar-brand" title="Burguer Express - Início">
+          <img src="assets/images/logo.svg" alt="Burguer Express Logo" class="logo-img">
+        </a>
+
+        <nav class="sidebar-nav">
+          <a href="index.html" class="nav-link" title="Página Inicial">
+            <i class="fa-solid fa-house" aria-hidden="true"></i>
+            <span>Início</span>
+          </a>
+          <a href="cardapio.html" class="nav-link" title="Ver Cardápio Completo">
+            <i class="fa-solid fa-burger" aria-hidden="true"></i>
+            <span>Cardápio</span>
+          </a>
+          <a href="pedido.html" class="nav-link" title="Meu Pedido na Mesa">
+            <i class="fa-solid fa-receipt" aria-hidden="true"></i>
+            <span>Meu Pedido</span>
+          </a>
+          <a href="sobre.html" class="nav-link active" title="Sobre a Burguer Express">
+            <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+            <span>Sobre</span>
+          </a>
+          <a href="contato.html" class="nav-link" title="Fale Conosco">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <span>Contato</span>
+          </a>
+          <!-- Link do Administrador inserido no Menu Principal -->
+          <a href="admin.html" class="nav-link nav-link-admin" title="Painel da Cozinha / Administração (Acesso liberado para testes)">
+            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+            <span>Painel Admin</span>
+            <span class="nav-badge-pill">Acesso</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Rodapé da barra lateral -->
+      <div class="sidebar-footer">
+        <img src="assets/images/burger-icon.svg" alt="" class="footer-icon" aria-hidden="true">
+        <p class="footer-text">Sabor, qualidade e aquele toque especial em cada mordida.</p>
+        <div class="accent-line" aria-hidden="true"></div>
+      </div>
+    </aside>
+
+    <!-- ÁREA PRINCIPAL -->
+    <div class="main-content">
+
+      <!-- CABEÇALHO SUPERIOR -->
+      <header class="top-header">
+        <div class="search-bar">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <input type="search" placeholder="Buscar no cardápio..." aria-label="Buscar produtos no cardápio">
+        </div>
+
+        <div class="header-actions">
+          <a href="pedido.html" class="header-icon-btn" title="Ver pedido da mesa" aria-label="Carrinho zerado">
+            <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+            <span class="badge-count">0</span>
+          </a>
+          <a href="login.html" class="header-icon-btn" title="Minha Conta / Entrar" aria-label="Perfil do usuário">
+            <i class="fa-regular fa-user" aria-hidden="true"></i>
+          </a>
+        </div>
+      </header>
+
+      <!-- CONTEÚDO PRINCIPAL: SOBRE -->
+      <main class="page-container">
+
+        <!-- DESTAQUE PRINCIPAL -->
+        <section class="sobre-hero">
+          <span class="sobre-tag">Nossa Identidade &amp; Propósito</span>
+          <h1>A paixão pelo hambúrguer artesanal feito para saborear <span>no salão</span></h1>
+          <p>
+            A Burguer Express nasceu com o compromisso de unir a autenticidade do hambúrguer artesanal na brasa com a praticidade de uma experiência física moderna, onde você senta à mesa e pede no seu próprio tempo.
+          </p>
+        </section>
+
+        <!-- HISTÓRIA E ESPAÇO FÍSICO -->
+        <div class="sobre-grid-two">
+
+          <article class="sobre-card">
+            <div class="sobre-card-icon" aria-hidden="true">
+              <i class="fa-solid fa-fire-flame-curved"></i>
+            </div>
+            <h2>Nossa História</h2>
+            <p>
+              Iniciamos nossa jornada com o sonho de resgatar o sabor verdadeiro da carne grelhada na temperatura exata, longe do padrão industrializado dos fast foods tradicionais.
+            </p>
+            <p>
+              Cada receita foi testada exaustivamente para alcançar o equilíbrio ideal entre crocância, suculência e textura, escolhendo produtores locais e pães brioche assados todos os dias na primeira hora da manhã.
+            </p>
+          </article>
+
+          <article class="sobre-card">
+            <div class="sobre-card-icon" aria-hidden="true">
+              <i class="fa-solid fa-store"></i>
+            </div>
+            <h2>Nosso Espaço Físico</h2>
+            <p>
+              Criamos uma lanchonete acolhedora com iluminação quente, ambiente industrial contemporâneo e música selecionada para receber famílias, amigos e apreciadores de boa gastronomia.
+            </p>
+            <p>
+              Em cada mesa, você tem acesso ao nosso atendente virtual: você marca seus lanches, escolhe a forma de pagamento e quando for pedir a conta, a equipe já saberá como finalizar seu atendimento sem esperas.
+            </p>
+          </article>
+
+        </div>
+
+        <!-- TRÊS PILARES -->
+        <section class="pillars-section" aria-label="Nossos Diferenciais">
+          <div class="section-header">
+            <h2 class="section-title">Nossos Diferenciais</h2>
+          </div>
+
+          <div class="pillars-grid">
+
+            <div class="pillar-card">
+              <div class="pillar-icon" aria-hidden="true">
+                <i class="fa-solid fa-drumstick-bite"></i>
+              </div>
+              <h3>Blend 100% Nobre</h3>
+              <p>Carnes de cortes selecionados moídas diariamente, temperadas apenas com sal de parrilla e pimenta do reino moída na hora.</p>
+            </div>
+
+            <div class="pillar-card">
+              <div class="pillar-icon" aria-hidden="true">
+                <i class="fa-solid fa-seedling"></i>
+              </div>
+              <h3>Ingredientes Frescos</h3>
+              <p>Queijo cheddar autêntico fatiado, bacon curado e defumado naturalmente e hortaliças frescas entregues todos os dias.</p>
+            </div>
+
+            <div class="pillar-card">
+              <div class="pillar-icon" aria-hidden="true">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+              </div>
+              <h3>Atendimento Virtual</h3>
+              <p>Sem filas no balcão: você faz o pedido na mesa pelo cardápio digital e acompanha a produção diretamente com a cozinha.</p>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- CTA FINAL -->
+        <div class="sobre-cta-card">
+          <div class="sobre-cta-text">
+            <h3>Preparado para saborear o verdadeiro hambúrguer?</h3>
+            <p>Explore nosso cardápio completo e monte seu pedido no salão da Burguer Express.</p>
+          </div>
+          <a href="cardapio.html" class="btn btn-primary">
+            <span>Ver Cardápio</span>
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+
+      </main>
+    </div>
+
+  </div>
+
+  <script src="assets/js/sobre.js"></script>
+</body>
+</html>
+

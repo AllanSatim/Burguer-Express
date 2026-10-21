@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardápio — Burguer Express</title>
+  <meta name="description" content="Confira o cardápio completo da Burguer Express: hambúrgueres artesanais, combos especiais, porções crocantes, bebidas e sobremesas para consumir no local.">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/cardapio.css">
+</head>
+<body>
+
+  <div class="app-layout">
+
+    <!-- BARRA LATERAL (SIDEBAR) -->
+    <aside class="sidebar" aria-label="Menu Principal">
+      <div>
+        <a href="index.html" class="sidebar-brand" title="Burguer Express - Início">
+          <img src="assets/images/logo.svg" alt="Burguer Express Logo" class="logo-img">
+        </a>
+
+        <nav class="sidebar-nav">
+          <a href="index.html" class="nav-link" title="Página Inicial">
+            <i class="fa-solid fa-house" aria-hidden="true"></i>
+            <span>Início</span>
+          </a>
+          <a href="cardapio.html" class="nav-link active" title="Cardápio Completo">
+            <i class="fa-solid fa-burger" aria-hidden="true"></i>
+            <span>Cardápio</span>
+          </a>
+          <a href="pedido.html" class="nav-link" title="Meu Pedido na Mesa">
+            <i class="fa-solid fa-receipt" aria-hidden="true"></i>
+            <span>Meu Pedido</span>
+          </a>
+          <a href="sobre.html" class="nav-link" title="Sobre a Burguer Express">
+            <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+            <span>Sobre</span>
+          </a>
+          <a href="contato.html" class="nav-link" title="Fale Conosco">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <span>Contato</span>
+          </a>
+          <!-- Link do Administrador inserido no Menu Principal -->
+          <a href="admin.html" class="nav-link nav-link-admin" title="Painel da Cozinha / Administração (Acesso liberado para testes)">
+            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+            <span>Painel Admin</span>
+            <span class="nav-badge-pill">Acesso</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Rodapé da barra lateral -->
+      <div class="sidebar-footer">
+        <img src="assets/images/burger-icon.svg" alt="" class="footer-icon" aria-hidden="true">
+        <p class="footer-text">Sabor, qualidade e aquele toque especial em cada mordida.</p>
+        <div class="accent-line" aria-hidden="true"></div>
+      </div>
+    </aside>
+
+    <!-- ÁREA PRINCIPAL -->
+    <div class="main-content">
+
+      <!-- CABEÇALHO SUPERIOR -->
+      <header class="top-header">
+        <div class="search-bar">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <input type="search" placeholder="Buscar no cardápio..." aria-label="Buscar produtos no cardápio">
+        </div>
+
+        <div class="header-actions">
+          <a href="pedido.html" class="header-icon-btn" title="Ver pedido da mesa" aria-label="Carrinho zerado">
+            <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+            <span class="badge-count">0</span>
+          </a>
+          <a href="login.html" class="header-icon-btn" title="Minha Conta / Entrar" aria-label="Perfil do usuário">
+            <i class="fa-regular fa-user" aria-hidden="true"></i>
+          </a>
+        </div>
+      </header>
+
+      <!-- CONTEÚDO DO CARDÁPIO -->
+      <main class="page-container">
+
+        <!-- CABEÇALHO DA SEÇÃO DE CARDÁPIO -->
+        <header class="cardapio-header">
+          <div class="cardapio-top-bar">
+            <div class="cardapio-title-group">
+              <h1>Nosso Cardápio</h1>
+              <p>Escolha seus itens favoritos para saborear quentinho na sua mesa.</p>
+            </div>
+
+            <!-- Campo de Busca específico da página -->
+            <div class="cardapio-search-box">
+              <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+              <input type="search" placeholder="Filtrar por nome ou ingrediente..." aria-label="Filtrar produtos">
+            </div>
+          </div>
+
+          <!-- NAVEGAÇÃO VISUAL POR CATEGORIAS -->
+          <nav class="category-filter-nav" aria-label="Filtro de categorias">
+            <a href="#todos" class="category-pill active">
+              <i class="fa-solid fa-fire" aria-hidden="true"></i>
+              <span>Todos</span>
+            </a>
+            <a href="#hamburgueres" class="category-pill">
+              <i class="fa-solid fa-burger" aria-hidden="true"></i>
+              <span>Hambúrgueres</span>
+            </a>
+            <a href="#combos" class="category-pill">
+              <i class="fa-solid fa-box-archive" aria-hidden="true"></i>
+              <span>Combos</span>
+            </a>
+            <a href="#acompanhamentos" class="category-pill">
+              <i class="fa-solid fa-bowl-food" aria-hidden="true"></i>
+              <span>Acompanhamentos</span>
+            </a>
+            <a href="#bebidas" class="category-pill">
+              <i class="fa-solid fa-wine-bottle" aria-hidden="true"></i>
+              <span>Bebidas</span>
+            </a>
+            <a href="#sobremesas" class="category-pill">
+              <i class="fa-solid fa-ice-cream" aria-hidden="true"></i>
+              <span>Sobremesas</span>
+            </a>
+          </nav>
+        </header>
+
+        <!-- SEÇÃO: HAMBÚRGUERES -->
+        <section id="hamburgueres" class="menu-category-section" aria-labelledby="cat-hamburgueres">
+          <div class="category-section-header">
+            <i class="fa-solid fa-burger" aria-hidden="true"></i>
+            <h2 id="cat-hamburgueres" class="category-section-title">Hambúrgueres Artesanais</h2>
+            <span class="category-item-count">4 itens</span>
+          </div>
+
+          <div class="cardapio-grid">
+
+            <!-- Item 1: Cheeseburger Clássico -->
+            <article class="product-card" data-category="hamburgueres" data-available="true">
+              <div class="product-img-wrapper">
+                <span class="product-badge badge-popular">Mais Vendido</span>
+                <img src="assets/images/burger-classic.jpg" alt="Cheeseburger Clássico" class="product-img">
+              </div>
+              <div class="product-content">
+                <h3 class="product-title">Cheeseburger Clássico</h3>
+                <p class="product-desc">Pão brioche dourado na manteiga, hambúrguer 180g bovino, queijo cheddar derretido, alface fresca, tomate e molho especial Express.</p>
+                <div class="product-price">R$ 24,90</div>
+                <div class="product-actions">
+                  <div class="qty-selector" aria-label="Controle de quantidade">
+                    <button type="button" class="qty-btn" aria-label="Diminuir">−</button>
+                    <span class="qty-number">1</span>
+                    <button type="button" class="qty-btn" aria-label="Aumentar">+</button>
+                  </div>
+                  <button type="button" class="btn-add-product" aria-label="Adicionar Cheeseburger Clássico ao pedido">
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    <span>Adicionar</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item 2: Bacon Burger -->
+            <article class="product-card" data-category="hamburgueres" data-available="true">
+              <div class="product-img-wrapper">
+                <span class="product-badge badge-available">Disponível</span>
+                <img src="assets/images/burger-bacon.jpg" alt="Bacon Burger" class="product-img">
+              </div>
+              <div class="product-content">
+                <h3 class="product-title">Bacon Burger</h3>
+                <p class="product-desc">Pão brioche, hambúrguer 180g, generosas fatias de bacon artesanal crocante, queijo cheddar fatiado, cebola roxa e barbecue especial.</p>
+                <div class="product-price">R$ 27,90</div>
+                <div class="product-actions">
+                  <div class="qty-selector" aria-label="Controle de quantidade">
+                    <button type="button" class="qty-btn" aria-label="Diminuir">−</button>
+                    <span class="qty-number">1</span>
+                    <button type="button" class="qty-btn" aria-label="Aumentar">+</button>
+                  </div>
+                  <button type="button" class="btn-add-product" aria-label="Adicionar Bacon Burger ao pedido">
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    <span>Adicionar</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item 3: Smash Burger Duplo -->
+            <article class="product-card" data-category="hamburgueres" data-available="true">
+              <div class="product-img-wrapper">
+                <span class="product-badge badge-new">Novo</span>
+                <img src="assets/images/burger-smash.jpg" alt="Smash Burger Duplo" class="product-img">
+              </div>
+              <div class="product-content">
+                <h3 class="product-title">Smash Burger Duplo</h3>
+                <p class="product-desc">Dois smash burgers de 90g ultra prensados com crostinha crocante, dobro de american cheese, cebola caramelizada e maionese defumada.</p>
+                <div class="product-price">R$ 29,90</div>
+                <div class="product-actions">
+                  <div class="qty-selector" aria-label="Controle de quantidade">
+                    <button type="button" class="qty-btn" aria-label="Diminuir">−</button>
+                    <span class="qty-number">1</span>
+                    <button type="button" class="qty-btn" aria-label="Aumentar">+</button>
+                  </div>
+                  <button type="button" class="btn-add-product" aria-label="Adicionar Smash Burger ao pedido">
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    <span>Adicionar</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item 4: Trufado Artesanal -->
+            <article class="product-card" data-category="hamburgueres" data-available="true">
+              <div class="product-img-wrapper">
+                <span class="product-badge badge-available">Especial do Chef</span>
+                <img src="assets/images/burger-truffle.jpg" alt="Trufado Artesanal" class="product-img">
+              </div>
+              <div class="product-content">
+                <h3 class="product-title">Trufado Artesanal</h3>
+                <p class="product-desc">Pão australiano, hambúrguer de costela 200g, queijo gouda cremoso, mix de cogumelos salteados e maionese trufada exclusiva.</p>
+                <div class="product-price">R$ 34,90</div>
+                <div class="product-actions">
+                  <div class="qty-selector" aria-label="Controle de quantidade">
+                    <button type="button" class="qty-btn" aria-label="Diminuir">−</button>
+                    <span class="qty-number">1</span>
+                    <button type="button" class="qty-btn" aria-label="Aumentar">+</button>
+                  </div>
+                  <button type="button" class="btn-add-product" aria-label="Adicionar Trufado Artesanal ao pedido">
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    <span>Adicionar</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- SEÇÃO: COMBOS -->
+        <section id="combos" class="menu-category-section" aria-labelledby="cat-combos">
+          <div class="category-section-header">
+            <i class="fa-solid fa-box-archive" aria-hidden="true"></i>
+            <h2 id="cat-combos" class="category-section-title">Combos Completos</h2>
+            <span class="category-item-count">2 itens</span>
+          </div>
+
+          <div class="cardapio-grid">
+
+            <!-- Item 5: Combo Duplo Clássico -->
+            <article class="product-card" data-category="combos" data-available="true">
+              <div class="product-img-wrapper">
+                <span class="product-badge badge-popular">Mais Pedido</span>
+                <img src="assets/images/burger-combo.jpg" alt="Combo Duplo Clássico" class="product-img">
+              </div>
+              <div class="product-content">
+                <h3 class="product-title">Combo Duplo Clássico</h3>
+                <p class="product-desc">Hambúrguer duplo artesanal com cheddar e bacon, acompanha porção média de batata frita crocante e refrigerante gelado de 350ml.</p>
+                <div class="product-price">R$ 42,90</div>
+                <div class="product-actions">
+                  <div class="qty-selector" aria-label="Controle de quantidade">
+                    <button type="button" class="qty-btn" aria-label="Diminuir">−</button>
+                    <span class="qty-number">1</span>
+                    <button type="button" class="qty-btn" aria-label="Aumentar">+</button>
+                  </div>
+                  <button type="button" class="btn-add-product" aria-label="Adicionar Combo Duplo ao pedido">
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    <span>Adicionar</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item 6: Combo Bacon Lovers -->
+            <article class="product-card" data-category="combos" data-available="true">
+              <div class="product-img-wrapper">
+                <span class="product-badge badge-available">Disponível</span>
+                <img src="assets/images/banner-burger.jpg" alt="Combo Bacon Lovers" class="product-img">
+              </div>
+              <div class="product-content">
+                <h3 class="product-title">Combo Bacon Lovers</h3>
+                <p class="product-desc">Bacon Burger 180g caprichado, batata rústica com cheddar cremoso e bacon bits + milkshake de chocolate 400ml.</p>
+                <div class="product-price">R$ 46,90</div>
+                <div class="product-actions">
+                  <div class="qty-selector" aria-label="Controle de quantidade">
+                    <button type="button" class="qty-btn" aria-label="Diminuir">−</button>
+                    <span class="qty-number">1</span>
+                    <button type="button" class="qty-btn" aria-label="Aumentar">+</button>
+                  </div>
+                  <button type="button" class="btn-add-product" aria-label="Adicionar Combo Bacon Lovers ao pedido">
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    <span>Adicionar</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- SEÇÃO: ACOMPANHAMENTOS -->
+        <section id="acompanhamentos" class="menu-category-section" aria-labelledby="cat-acompanhamentos">
+          <div class="category-section-header">
+            <i class="fa-solid fa-bowl-food" aria-hidden="true"></i>
+            <h2 id="cat-acompanhamentos" class="category-section-title">Acompanhamentos</h2>
+            <span class="category-item-count">3 itens</span>
+          </div>
+
+          <div class="cardapio-grid">
+
+            <!-- Item 7: Batata Frita Crocante -->
+            <article class="product-card" data-category="acompanhamentos" data-available="true">
+              <div class="product-img-wrapper">
+                <span class="product-badge badge-available">Disponível</span>
+                <img src="assets/images/fries.jpg" alt="Batata Frita Crocante" class="product-img">
+              </div>
+              <div class="product-content">
+                <h3 class="product-title">Batata Frita Crocante</h3>
+                <p class="product-desc">Porção individual de batatas selecionadas, cortadas em palito, temperadas com sal marinho e páprica suave.</p>
+                <div class="product-price">R$ 12,90</div>
+                <div class="product-actions">
+                  <div class="qty-selector" aria-label="Controle de quantidade">
+                    <button type="button" class="qty-btn" aria-label="Diminuir">−</button>
+                    <span class="qty-number">1</span>
+                    <button type="button" class="qty-btn" aria-label="Aumentar">+</button>
+                  </div>
+                  <button type="button" class="btn-add-product" aria-label="Adicionar Batata Frita ao pedido">
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    <span>Adicionar</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item 8: Onion Rings Especial -->
+            <article class="product-card" data-category="acompanhamentos" data-available="true">
+              <div class="product-img-wrapper">
+                <span class="product-badge badge-available">Disponível</span>
+                <img src="assets/images/onion-rings.jpg" alt="Onion Rings Especial" class="product-img">
+              </div>
+              <div class="product-content">
+                <h3 class="product-title">Onion Rings Especial</h3>
+                <p class="product-desc">Anéis de cebola fresca empanados em massa crocante especial da casa, acompanhados de molho barbecue defumado.</p>
+                <div class="product-price">R$ 15,90</div>
+                <div class="product-actions">
+                  <div class="qty-selector" aria-label="Controle de quantidade">
+                    <button type="button" class="qty-btn" aria-label="Diminuir">−</button>
+                    <span class="qty-number">1</span>
+                    <button type="button" class="qty-btn" aria-label="Aumentar">+</button>
+                  </div>
+                  <button type="button" class="btn-add-product" aria-label="Adicionar Onion Rings ao pedido">
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    <span>Adicionar</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item 9: Nuggets Artesanais -->
+            <article class="product-card" data-category="acompanhamentos" data-available="true">
+              <div class="product-img-wrapper">
+                <span class="product-badge badge-available">Disponível</span>
+                <img src="assets/images/nuggets.jpg" alt="Nuggets Artesanais" class="product-img">
+              </div>
+              <div class="product-content">
+                <h3 class="product-title">Nuggets Artesanais (8 un)</h3>
+                <p class="product-desc">Pedaços selecionados de peito de frango marinados em ervas finas e empanados na farinha panko crocante.</p>
+                <div class="product-price">R$ 16,90</div>
+                <div class="product-actions">
+                  <div class="qty-selector" aria-label="Controle de quantidade">
+                    <button type="button" class="qty-btn" aria-label="Diminuir">−</button>
+                    <span class="qty-number">1</span>
+                    <button type="button" class="qty-btn" aria-label="Aumentar">+</button>
+                  </div>
+                  <button type="button" class="btn-add-product" aria-label="Adicionar Nuggets ao pedido">
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    <span>Adicionar</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- SEÇÃO: BEBIDAS -->
+        <section id="bebidas" class="menu-category-section" aria-labelledby="cat-bebidas">
+          <div class="category-section-header">
+            <i class="fa-solid fa-wine-bottle" aria-hidden="true"></i>
+            <h2 id="cat-bebidas" class="category-section-title">Bebidas</h2>
+            <span class="category-item-count">3 itens</span>
+          </div>
+
+          <div class="cardapio-grid">
+
+            <!-- Item 10: Coca-Cola 350ml -->
+            <article class="product-card" data-category="bebidas" data-available="true">
+              <div class="product-img-wrapper">
+                <span class="product-badge badge-available">Disponível</span>
+                <img src="assets/images/drinks.jpg" alt="Coca-Cola 350ml" class="product-img">
+              </div>
+              <div class="product-content">
+                <h3 class="product-title">Coca-Cola Lata 350ml</h3>
+                <p class="product-desc">Refrigerante Coca-Cola original estupidamente gelado. Servido com copo e gelo na mesa.</p>
+                <div class="product-price">R$ 7,00</div>
+                <div class="product-actions">
+                  <div class="qty-selector" aria-label="Controle de quantidade">
+                    <button type="button" class="qty-btn" aria-label="Diminuir">−</button>
+                    <span class="qty-number">1</span>
+                    <button type="button" class="qty-btn" aria-label="Aumentar">+</button>
+                  </div>
+                  <button type="button" class="btn-add-product" aria-label="Adicionar Coca-Cola ao pedido">
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    <span>Adicionar</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item 11: Milkshake de Chocolate -->
+            <article class="product-card" data-category="bebidas" data-available="true">
+              <div class="product-img-wrapper">
+                <span class="product-badge badge-popular">Favorito</span>
+                <img src="assets/images/milkshake.jpg" alt="Milkshake de Chocolate Artesanal" class="product-img">
+              </div>
+              <div class="product-content">
+                <h3 class="product-title">Milkshake de Chocolate 450ml</h3>
+                <p class="product-desc">Sorvete artesanal batido com calda de cacau 70%, chantilly fresco e raspas de chocolate belga.</p>
+                <div class="product-price">R$ 18,90</div>
+                <div class="product-actions">
+                  <div class="qty-selector" aria-label="Controle de quantidade">
+                    <button type="button" class="qty-btn" aria-label="Diminuir">−</button>
+                    <span class="qty-number">1</span>
+                    <button type="button" class="qty-btn" aria-label="Aumentar">+</button>
+                  </div>
+                  <button type="button" class="btn-add-product" aria-label="Adicionar Milkshake ao pedido">
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    <span>Adicionar</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item 12: Guaraná Antarctica (Esgotado) -->
+            <article class="product-card is-soldout" data-category="bebidas" data-available="false">
+              <div class="product-img-wrapper">
+                <span class="product-badge badge-soldout">Esgotado</span>
+                <img src="assets/images/drinks.jpg" alt="Guaraná Antarctica 350ml" class="product-img">
+              </div>
+              <div class="product-content">
+                <h3 class="product-title">Guaraná Antarctica 350ml</h3>
+                <p class="product-desc">Refrigerante Guaraná Antarctica lata 350ml gelada. (Indisponível no momento).</p>
+                <div class="product-price">R$ 7,00</div>
+                <div class="product-actions">
+                  <div class="qty-selector" aria-label="Controle de quantidade desabilitado">
+                    <button type="button" class="qty-btn" disabled aria-label="Desabilitado">−</button>
+                    <span class="qty-number">0</span>
+                    <button type="button" class="qty-btn" disabled aria-label="Desabilitado">+</button>
+                  </div>
+                  <button type="button" class="btn-add-product btn-disabled" disabled aria-label="Item indisponível">
+                    <i class="fa-solid fa-ban" aria-hidden="true"></i>
+                    <span>Indisponível</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- SEÇÃO: SOBREMESAS -->
+        <section id="sobremesas" class="menu-category-section" aria-labelledby="cat-sobremesas">
+          <div class="category-section-header">
+            <i class="fa-solid fa-ice-cream" aria-hidden="true"></i>
+            <h2 id="cat-sobremesas" class="category-section-title">Sobremesas</h2>
+            <span class="category-item-count">1 item</span>
+          </div>
+
+          <div class="cardapio-grid">
+
+            <!-- Item 13: Brownie com Sorvete -->
+            <article class="product-card" data-category="sobremesas" data-available="true">
+              <div class="product-img-wrapper">
+                <span class="product-badge badge-available">Disponível</span>
+                <img src="assets/images/dessert.jpg" alt="Brownie com Sorvete" class="product-img">
+              </div>
+              <div class="product-content">
+                <h3 class="product-title">Brownie com Sorvete</h3>
+                <p class="product-desc">Brownie de chocolate meio amargo com nozes crocantes, servido quentinho com bola de sorvete de baunilha.</p>
+                <div class="product-price">R$ 16,90</div>
+                <div class="product-actions">
+                  <div class="qty-selector" aria-label="Controle de quantidade">
+                    <button type="button" class="qty-btn" aria-label="Diminuir">−</button>
+                    <span class="qty-number">1</span>
+                    <button type="button" class="qty-btn" aria-label="Aumentar">+</button>
+                  </div>
+                  <button type="button" class="btn-add-product" aria-label="Adicionar Brownie ao pedido">
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    <span>Adicionar</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- BARRA FLUTUANTE DE PEDIDO ATUAL (ZERADA INICIALMENTE) -->
+        <aside class="cardapio-cart-bar" aria-label="Resumo do pedido na mesa">
+          <div class="cart-bar-info">
+            <div class="cart-bar-badge" aria-hidden="true">
+              <i class="fa-solid fa-receipt"></i>
+            </div>
+            <div class="cart-bar-text">
+              <h4>Pedido da Mesa (0 itens)</h4>
+              <p>Total atual: <strong>R$ 0,00</strong> • Marque seus itens para enviar à cozinha</p>
+            </div>
+          </div>
+          <a href="pedido.html" class="btn btn-primary" title="Abrir comanda e fazer pedido na mesa">
+            Ver Pedido da Mesa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </aside>
+
+      </main>
+    </div>
+
+  </div>
+
+  <script src="assets/js/cardapio.js"></script>
+</body>
+</html>

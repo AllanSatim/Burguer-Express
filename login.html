@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar na Conta — Burguer Express</title>
+  <meta name="description" content="Acesse sua conta na Burguer Express para fazer seus pedidos favoritos com rapidez.">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/login.css">
+</head>
+<body>
+
+  <main class="auth-wrapper">
+    <div class="auth-card">
+
+      <!-- CABEÇALHO COM LOGO -->
+      <header class="auth-header">
+        <a href="index.html" class="auth-logo-link" title="Voltar para a página inicial">
+          <img src="assets/images/logo.svg" alt="Burguer Express Logo" class="auth-logo-img">
+        </a>
+        <h1 class="auth-title">Bem-vindo de volta!</h1>
+        <p class="auth-subtitle">Insira suas credenciais para acessar sua conta</p>
+      </header>
+
+      <!-- ÁREA RESERVADA PARA MENSAGENS DE ERRO OU VALIDAÇÃO FUTURAS -->
+      <div id="auth-feedback" class="auth-alert-area" aria-live="polite">
+        <!-- Estrutura demonstrativa preparada para injeção via JS pela equipe -->
+        <div class="alert-box alert-error" role="alert">
+          <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+          <span>Exemplo: E-mail ou senha incorretos. Verifique seus dados.</span>
+        </div>
+      </div>
+
+      <!-- FORMULÁRIO DE LOGIN -->
+      <form action="#" method="post" class="auth-form" novalidate onsubmit="return false;">
+
+        <!-- Campo E-mail -->
+        <div class="form-group">
+          <label for="login-email" class="form-label">E-mail</label>
+          <div class="input-icon-group">
+            <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+            <input 
+              type="email" 
+              id="login-email" 
+              name="email" 
+              class="form-input" 
+              placeholder="seuemail@exemplo.com" 
+              required 
+              autocomplete="email">
+          </div>
+        </div>
+
+        <!-- Campo Senha -->
+        <div class="form-group">
+          <label for="login-password" class="form-label">Senha</label>
+          <div class="input-icon-group">
+            <i class="fa-solid fa-lock" aria-hidden="true"></i>
+            <input 
+              type="password" 
+              id="login-password" 
+              name="password" 
+              class="form-input" 
+              placeholder="••••••••" 
+              required 
+              autocomplete="current-password">
+          </div>
+        </div>
+
+        <!-- Opções adicionais (Lembrar-me & Esqueci minha senha) -->
+        <div class="auth-form-options">
+          <label class="checkbox-label">
+            <input type="checkbox" name="remember" id="remember-me">
+            <span>Lembrar-me</span>
+          </label>
+          <a href="recuperar-senha.html" class="forgot-link">Esqueci minha senha</a>
+        </div>
+
+        <!-- Botão Entrar -->
+        <button type="submit" class="btn btn-primary btn-block btn-lg">
+          <span>Entrar</span>
+          <i class="fa-solid fa-arrow-right-to-bracket" aria-hidden="true"></i>
+        </button>
+
+      </form>
+
+      <!-- RODAPÉ DO CARD COM LINK PARA CADASTRO -->
+      <footer class="auth-footer">
+        <span>Não possui uma conta?</span>
+        <a href="cadastro.html">Criar conta</a>
+      </footer>
+
+    </div>
+
+    <!-- LINK PARA VOLTAR AO INÍCIO -->
+    <div class="auth-back-home">
+      <a href="index.html" class="auth-back-link">
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        <span>Voltar para a página inicial</span>
+      </a>
+    </div>
+  </main>
+
+  <script src="assets/js/login.js"></script>
+</body>
+</html>
+

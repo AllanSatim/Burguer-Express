@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato &amp; Localização — Burguer Express</title>
+  <meta name="description" content="Entre em contato com a lanchonete Burguer Express. Confira nosso endereço físico, horários de atendimento no salão, WhatsApp e envie sua mensagem.">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/contato.css">
+</head>
+<body>
+
+  <div class="app-layout">
+
+    <!-- BARRA LATERAL (SIDEBAR) -->
+    <aside class="sidebar" aria-label="Menu Principal">
+      <div>
+        <a href="index.html" class="sidebar-brand" title="Burguer Express - Início">
+          <img src="assets/images/logo.svg" alt="Burguer Express Logo" class="logo-img">
+        </a>
+
+        <nav class="sidebar-nav">
+          <a href="index.html" class="nav-link" title="Página Inicial">
+            <i class="fa-solid fa-house" aria-hidden="true"></i>
+            <span>Início</span>
+          </a>
+          <a href="cardapio.html" class="nav-link" title="Ver Cardápio Completo">
+            <i class="fa-solid fa-burger" aria-hidden="true"></i>
+            <span>Cardápio</span>
+          </a>
+          <a href="pedido.html" class="nav-link" title="Meu Pedido na Mesa">
+            <i class="fa-solid fa-receipt" aria-hidden="true"></i>
+            <span>Meu Pedido</span>
+          </a>
+          <a href="sobre.html" class="nav-link" title="Sobre a Burguer Express">
+            <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+            <span>Sobre</span>
+          </a>
+          <a href="contato.html" class="nav-link active" title="Fale Conosco">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <span>Contato</span>
+          </a>
+          <!-- Link do Administrador inserido no Menu Principal -->
+          <a href="admin.html" class="nav-link nav-link-admin" title="Painel da Cozinha / Administração (Acesso liberado para testes)">
+            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+            <span>Painel Admin</span>
+            <span class="nav-badge-pill">Acesso</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Rodapé da barra lateral -->
+      <div class="sidebar-footer">
+        <img src="assets/images/burger-icon.svg" alt="" class="footer-icon" aria-hidden="true">
+        <p class="footer-text">Sabor, qualidade e aquele toque especial em cada mordida.</p>
+        <div class="accent-line" aria-hidden="true"></div>
+      </div>
+    </aside>
+
+    <!-- ÁREA PRINCIPAL -->
+    <div class="main-content">
+
+      <!-- CABEÇALHO SUPERIOR -->
+      <header class="top-header">
+        <div class="search-bar">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <input type="search" placeholder="Buscar no cardápio..." aria-label="Buscar produtos no cardápio">
+        </div>
+
+        <div class="header-actions">
+          <a href="pedido.html" class="header-icon-btn" title="Ver pedido da mesa" aria-label="Carrinho zerado">
+            <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+            <span class="badge-count">0</span>
+          </a>
+          <a href="login.html" class="header-icon-btn" title="Minha Conta / Entrar" aria-label="Perfil do usuário">
+            <i class="fa-regular fa-user" aria-hidden="true"></i>
+          </a>
+        </div>
+      </header>
+
+      <!-- CONTEÚDO PRINCIPAL: CONTATO -->
+      <main class="page-container">
+
+        <header class="contato-header">
+          <h1>Fale Conosco &amp; Onde Estamos</h1>
+          <p>Venha nos visitar no nosso salão físico ou envie uma mensagem com suas dúvidas, sugestões ou reservas.</p>
+        </header>
+
+        <div class="contato-grid">
+
+          <!-- COLUNA ESQUERDA: INFORMAÇÕES DE CONTATO -->
+          <div class="contato-info-col">
+
+            <!-- Card 1: Endereço da Lanchonete -->
+            <article class="contato-info-card">
+              <div class="contato-info-icon" aria-hidden="true">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="contato-info-content">
+                <h3>Nosso Endereço Físico</h3>
+                <p><strong>Burguer Express — Salão Principal</strong></p>
+                <p>Rua dos Burgers, 120 - Centro Gastronômico</p>
+                <p>São Paulo - SP • CEP 01310-100</p>
+              </div>
+            </article>
+
+            <!-- Card 2: Horários de Funcionamento -->
+            <article class="contato-info-card">
+              <div class="contato-info-icon" aria-hidden="true">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+              <div class="contato-info-content">
+                <h3>Horários de Atendimento no Salão</h3>
+                <p><strong>Terça a Quinta:</strong> 18h00 às 23h00</p>
+                <p><strong>Sexta e Sábado:</strong> 18h00 às 00h00</p>
+                <p><strong>Domingo:</strong> 18h00 às 23h30</p>
+                <p style="color: #F87171;">Segundas-feiras: Fechado para descanso</p>
+              </div>
+            </article>
+
+            <!-- Card 3: Telefone e WhatsApp -->
+            <article class="contato-info-card">
+              <div class="contato-info-icon" aria-hidden="true">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="contato-info-content">
+                <h3>Telefone &amp; WhatsApp</h3>
+                <p>WhatsApp da Lanchonete: <strong>(11) 98765-4321</strong></p>
+                <p>Telefone Fixo: (11) 3456-7890</p>
+                <p>Atendimento durante o horário de funcionamento</p>
+              </div>
+            </article>
+
+            <!-- Card 4: E-mail -->
+            <article class="contato-info-card">
+              <div class="contato-info-icon" aria-hidden="true">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div class="contato-info-content">
+                <h3>E-mail de Contato</h3>
+                <p><strong>contato@burguerexpress.com.br</strong></p>
+                <p>eventos@burguerexpress.com.br</p>
+              </div>
+            </article>
+
+          </div>
+
+          <!-- COLUNA DIREITA: FORMULÁRIO DE MENSAGEM -->
+          <div class="contato-form-card">
+            <h2 class="contato-form-title">Envie sua mensagem</h2>
+            <p class="contato-form-desc">Tem uma dúvida sobre o cardápio, sugestão ou elogio? Preencha os campos abaixo.</p>
+
+            <form action="#" method="post" novalidate onsubmit="return false;">
+
+              <!-- Nome -->
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Nome Completo *</label>
+                <div class="input-icon-group">
+                  <i class="fa-regular fa-user" aria-hidden="true"></i>
+                  <input type="text" id="contact-name" name="name" class="form-input" placeholder="Seu nome" required>
+                </div>
+              </div>
+
+              <!-- Grid E-mail e Telefone -->
+              <div class="contato-form-grid">
+                <div class="form-group">
+                  <label for="contact-email" class="form-label">E-mail *</label>
+                  <div class="input-icon-group">
+                    <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+                    <input type="email" id="contact-email" name="email" class="form-input" placeholder="seu@email.com" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-phone" class="form-label">Telefone / WhatsApp</label>
+                  <div class="input-icon-group">
+                    <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                    <input type="tel" id="contact-phone" name="phone" class="form-input" placeholder="(11) 99999-9999">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Assunto -->
+              <div class="form-group">
+                <label for="contact-subject" class="form-label">Motivo do Contato *</label>
+                <select id="contact-subject" name="subject" class="form-select">
+                  <option value="duvida">Dúvida sobre o cardápio ou ingredientes</option>
+                  <option value="elogio">Elogio ao atendimento da lanchonete</option>
+                  <option value="sugestao">Sugestão de melhoria</option>
+                  <option value="reserva">Reserva de mesa para grupos ou aniversários</option>
+                  <option value="outro">Outro assunto</option>
+                </select>
+              </div>
+
+              <!-- Mensagem -->
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Mensagem *</label>
+                <textarea id="contact-message" name="message" rows="4" class="form-textarea" placeholder="Escreva aqui sua mensagem detalhada..." required></textarea>
+              </div>
+
+              <!-- Botão Enviar -->
+              <button type="submit" class="btn btn-primary btn-block btn-lg">
+                <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                <span>Enviar Mensagem</span>
+              </button>
+
+            </form>
+          </div>
+
+        </div>
+
+      </main>
+    </div>
+
+  </div>
+
+  <script src="assets/js/contato.js"></script>
+</body>
+</html>
+
