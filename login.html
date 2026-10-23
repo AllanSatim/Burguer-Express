@@ -3,91 +3,167 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Entrar na Conta — Burguer Express</title>
-  <meta name="description" content="Acesse sua conta na Burguer Express para fazer seus pedidos favoritos com rapidez.">
-  <link rel="stylesheet" href="assets/css/global.css">
-  <link rel="stylesheet" href="assets/css/login.css">
+  <title>Check-in do Jogador — Pixel Burguer</title>
+  <meta name="description" content="Conecte sua mesa para fazer pedidos sem complicação na Pixel Burguer.">
+  <!-- CSS base mantém o layout; o tema abaixo personaliza cores e componentes. -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/tema-gamer.css">
 </head>
 <body>
+  <!-- Acessibilidade: permite pular a navegação usando a tecla Tab. -->
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
 
-  <main class="auth-wrapper">
+  <!-- Acesso: alterna entre identificação de cliente e formulário administrativo. -->
+  <!-- ===================================================================
+       CONTROLES DE ABA EM PURO CSS (Zero JavaScript)
+       Alterna entre: Cliente (Sem senha) e Administrador (Com senha)
+       =================================================================== -->
+  <input type="radio" name="auth-mode" id="auth-tab-client" class="auth-toggle-radios" checked>
+  <input type="radio" name="auth-mode" id="auth-tab-admin" class="auth-toggle-radios">
+
+  <main class="auth-wrapper" id="conteudo-principal">
     <div class="auth-card">
 
-      <!-- CABEÇALHO COM LOGO -->
+      <!-- CABEÇALHO GAMER COM LOGO -->
       <header class="auth-header">
         <a href="index.html" class="auth-logo-link" title="Voltar para a página inicial">
-          <img src="assets/images/logo.svg" alt="Burguer Express Logo" class="auth-logo-img">
+          <img src="assets/images/LogoPixelBurguer1.png" alt="Pixel Burguer" class="auth-logo-img">
         </a>
-        <h1 class="auth-title">Bem-vindo de volta!</h1>
-        <p class="auth-subtitle">Insira suas credenciais para acessar sua conta</p>
+        <h1 class="auth-title">Portal Gamer</h1>
+        <p class="auth-subtitle">Selecione seu tipo de acesso para continuar</p>
       </header>
 
-      <!-- ÁREA RESERVADA PARA MENSAGENS DE ERRO OU VALIDAÇÃO FUTURAS -->
-      <div id="auth-feedback" class="auth-alert-area" aria-live="polite">
-        <!-- Estrutura demonstrativa preparada para injeção via JS pela equipe -->
-        <div class="alert-box alert-error" role="alert">
-          <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
-          <span>Exemplo: E-mail ou senha incorretos. Verifique seus dados.</span>
-        </div>
-      </div>
+      <!-- SELETOR DE ABAS PURO CSS -->
+      <nav class="auth-nav-tabs" aria-label="Tipo de Acesso">
+        <label for="auth-tab-client" class="auth-tab-btn" id="tab-label-client" title="Login de cliente sem senha">
+          <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+          <span>Cliente na Mesa</span>
+        </label>
+        <label for="auth-tab-admin" class="auth-tab-btn" id="tab-label-admin" title="Login de administrador com senha">
+          <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+          <span>Painel Admin</span>
+        </label>
+      </nav>
 
-      <!-- FORMULÁRIO DE LOGIN -->
-      <form action="#" method="post" class="auth-form" novalidate onsubmit="return false;">
-
-        <!-- Campo E-mail -->
-        <div class="form-group">
-          <label for="login-email" class="form-label">E-mail</label>
-          <div class="input-icon-group">
-            <i class="fa-regular fa-envelope" aria-hidden="true"></i>
-            <input 
-              type="email" 
-              id="login-email" 
-              name="email" 
-              class="form-input" 
-              placeholder="seuemail@exemplo.com" 
-              required 
-              autocomplete="email">
+      <!-- ===================================================================
+           SEÇÃO 1: LOGIN DO CLIENTE (SEM SENHA - APENAS NOME E MESA)
+           =================================================================== -->
+      <section id="section-client-login">
+        
+        <div class="gamer-banner-notice">
+          <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+          <div>
+            <strong>Acesso rápido sem senha!</strong>
+            <span>Basta colocar seu nome e o número da sua mesa para abrir o cardápio e pedir.</span>
           </div>
         </div>
 
-        <!-- Campo Senha -->
-        <div class="form-group">
-          <label for="login-password" class="form-label">Senha</label>
-          <div class="input-icon-group">
-            <i class="fa-solid fa-lock" aria-hidden="true"></i>
-            <input 
-              type="password" 
-              id="login-password" 
-              name="password" 
-              class="form-input" 
-              placeholder="••••••••" 
-              required 
-              autocomplete="current-password">
+        <form action="cardapio.html" method="get" class="auth-form">
+
+          <!-- Campo Nome do Jogador / Cliente -->
+          <div class="form-group">
+            <label for="client-name" class="form-label">
+              <span>Seu Nome ou Gamer Tag *</span>
+              <span class="label-badge">Player</span>
+            </label>
+            <div class="input-icon-group">
+              <i class="fa-solid fa-user-ninja" aria-hidden="true"></i>
+              <input 
+                type="text" 
+                id="client-name" 
+                name="cliente_nome" 
+                class="form-input" 
+                placeholder="Ex: Vitor, Lucas, Gamer01..." 
+                required 
+                autocomplete="name">
+            </div>
+          </div>
+
+          <!-- Campo Número da Mesa -->
+          <div class="form-group">
+            <label for="client-table" class="form-label">
+              <span>Número da sua Mesa ou Balcão *</span>
+              <span class="label-badge">Mesa</span>
+            </label>
+            <div class="input-icon-group">
+              <i class="fa-solid fa-chair" aria-hidden="true"></i>
+              <input 
+                type="text" 
+                id="client-table" 
+                name="numero_mesa" 
+                class="form-input" 
+                placeholder="Ex: Mesa 04 (ou Balcão 02)" 
+                required>
+            </div>
+          </div>
+
+          <!-- Botão Entrar na Mesa -->
+          <button type="submit" class="btn btn-gamer-cyan btn-block btn-lg" style="margin-top: 14px;">
+            <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+            <span>Conectar na Mesa &amp; Abrir Cardápio</span>
+          </button>
+
+        </form>
+
+      </section>
+
+      <!-- ===================================================================
+           SEÇÃO 2: LOGIN DO ADMINISTRADOR (RESTRITO COM SENHA)
+           =================================================================== -->
+      <section id="section-admin-login" style="display: none;">
+
+        <div class="admin-banner-notice">
+          <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+          <div>
+            <strong>Acesso Restrito ao Administrador</strong>
+            <span>Protótipo visual sem autenticação. Não digite senhas reais; acesso somente para demonstração.</span>
           </div>
         </div>
 
-        <!-- Opções adicionais (Lembrar-me & Esqueci minha senha) -->
-        <div class="auth-form-options">
-          <label class="checkbox-label">
-            <input type="checkbox" name="remember" id="remember-me">
-            <span>Lembrar-me</span>
-          </label>
-          <a href="recuperar-senha.html" class="forgot-link">Esqueci minha senha</a>
-        </div>
+        <form action="admin.html" method="get" class="auth-form">
 
-        <!-- Botão Entrar -->
-        <button type="submit" class="btn btn-primary btn-block btn-lg">
-          <span>Entrar</span>
-          <i class="fa-solid fa-arrow-right-to-bracket" aria-hidden="true"></i>
-        </button>
+          <!-- Campo Usuário Admin -->
+          <div class="form-group">
+            <label for="admin-user-input" class="form-label">Usuário ou E-mail Admin</label>
+            <div class="input-icon-group">
+              <i class="fa-solid fa-user-shield" aria-hidden="true"></i>
+              <input 
+                type="text" 
+                id="admin-user-input" 
+                name="admin_user" 
+                class="form-input" 
+                value="admin"
+                required>
+            </div>
+          </div>
 
-      </form>
+          <!-- Campo Senha do Admin (Apenas no Painel do Administrador!) -->
+          <div class="form-group">
+            <label for="admin-pass-input" class="form-label">
+              <span>Senha do Administrador *</span>
+              <span class="label-badge badge-lock"><i class="fa-solid fa-lock"></i> Requer Senha</span>
+            </label>
+            <div class="input-icon-group">
+              <i class="fa-solid fa-key" aria-hidden="true"></i>
+              <input 
+                type="password" 
+                id="admin-pass-input" 
+                name="admin_password" 
+                class="form-input" 
+                placeholder="Digite sua senha..." 
+                required>
+            </div>
+          </div>
 
-      <!-- RODAPÉ DO CARD COM LINK PARA CADASTRO -->
-      <footer class="auth-footer">
-        <span>Não possui uma conta?</span>
-        <a href="cadastro.html">Criar conta</a>
-      </footer>
+          <!-- Botão Entrar Admin -->
+          <button type="submit" class="btn btn-gamer-purple btn-block btn-lg" style="margin-top: 14px;">
+            <i class="fa-solid fa-unlock-keyhole" aria-hidden="true"></i>
+            <span>Entrar no Painel Admin</span>
+          </button>
+
+        </form>
+
+      </section>
 
     </div>
 
@@ -95,12 +171,15 @@
     <div class="auth-back-home">
       <a href="index.html" class="auth-back-link">
         <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
-        <span>Voltar para a página inicial</span>
+        <span>Voltar para o Salão Principal</span>
       </a>
     </div>
   </main>
 
+  <!-- Espaço reservado para implementação JavaScript pelos membros da equipe -->
+  <!-- Primeiro as ações compartilhadas; depois o código específico desta tela. -->
+  <script src="assets/js/comum.js"></script>
   <script src="assets/js/login.js"></script>
+
 </body>
 </html>
-

@@ -3,20 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cardápio — Burguer Express</title>
-  <meta name="description" content="Confira o cardápio completo da Burguer Express: hambúrgueres artesanais, combos especiais, porções crocantes, bebidas e sobremesas para consumir no local.">
-  <link rel="stylesheet" href="assets/css/global.css">
-  <link rel="stylesheet" href="assets/css/cardapio.css">
+  <title>Cardápio — Pixel Burguer</title>
+  <meta name="description" content="Confira o cardápio completo da Pixel Burguer: hambúrgueres artesanais, combos especiais, porções, bebidas e sobremesas.">
+  <!-- CSS base mantém o layout; o tema abaixo personaliza cores e componentes. -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/tema-gamer.css">
 </head>
 <body>
+  <!-- Acessibilidade: permite pular a navegação usando a tecla Tab. -->
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
 
+  <!-- Cardápio público: agrupa categorias, busca, produtos e resumo da comanda. -->
   <div class="app-layout">
 
     <!-- BARRA LATERAL (SIDEBAR) -->
     <aside class="sidebar" aria-label="Menu Principal">
       <div>
-        <a href="index.html" class="sidebar-brand" title="Burguer Express - Início">
-          <img src="assets/images/logo.svg" alt="Burguer Express Logo" class="logo-img">
+        <a href="index.html" class="sidebar-brand" title="Pixel Burguer - Início">
+          <img src="assets/images/LogoPixelBurguer1.png" alt="Pixel Burguer" class="logo-img">
         </a>
 
         <nav class="sidebar-nav">
@@ -32,7 +36,7 @@
             <i class="fa-solid fa-receipt" aria-hidden="true"></i>
             <span>Meu Pedido</span>
           </a>
-          <a href="sobre.html" class="nav-link" title="Sobre a Burguer Express">
+          <a href="sobre.html" class="nav-link" title="Sobre a Pixel Burguer">
             <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
             <span>Sobre</span>
           </a>
@@ -51,7 +55,7 @@
 
       <!-- Rodapé da barra lateral -->
       <div class="sidebar-footer">
-        <img src="assets/images/burger-icon.svg" alt="" class="footer-icon" aria-hidden="true">
+        <img src="assets/images/LogoPixelBurguer1.png" alt="" class="footer-icon" aria-hidden="true">
         <p class="footer-text">Sabor, qualidade e aquele toque especial em cada mordida.</p>
         <div class="accent-line" aria-hidden="true"></div>
       </div>
@@ -79,7 +83,7 @@
       </header>
 
       <!-- CONTEÚDO DO CARDÁPIO -->
-      <main class="page-container">
+      <main class="page-container" id="conteudo-principal">
 
         <!-- CABEÇALHO DA SEÇÃO DE CARDÁPIO -->
         <header class="cardapio-header">
@@ -136,10 +140,10 @@
           <div class="cardapio-grid">
 
             <!-- Item 1: Cheeseburger Clássico -->
-            <article class="product-card" data-category="hamburgueres" data-available="true">
+            <article class="product-card" data-category="hamburgueres">
               <div class="product-img-wrapper">
                 <span class="product-badge badge-popular">Mais Vendido</span>
-                <img src="assets/images/burger-classic.jpg" alt="Cheeseburger Clássico" class="product-img">
+                <img src="assets/images/burger-classic.jpg" alt="Cheeseburger Clássico" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Cheeseburger Clássico</h3>
@@ -160,10 +164,9 @@
             </article>
 
             <!-- Item 2: Bacon Burger -->
-            <article class="product-card" data-category="hamburgueres" data-available="true">
+            <article class="product-card" data-category="hamburgueres">
               <div class="product-img-wrapper">
-                <span class="product-badge badge-available">Disponível</span>
-                <img src="assets/images/burger-bacon.jpg" alt="Bacon Burger" class="product-img">
+                <img src="assets/images/burger-bacon.jpg" alt="Bacon Burger" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Bacon Burger</h3>
@@ -184,10 +187,10 @@
             </article>
 
             <!-- Item 3: Smash Burger Duplo -->
-            <article class="product-card" data-category="hamburgueres" data-available="true">
+            <article class="product-card" data-category="hamburgueres">
               <div class="product-img-wrapper">
                 <span class="product-badge badge-new">Novo</span>
-                <img src="assets/images/burger-smash.jpg" alt="Smash Burger Duplo" class="product-img">
+                <img src="assets/images/burger-smash.jpg" alt="Smash Burger Duplo" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Smash Burger Duplo</h3>
@@ -208,10 +211,10 @@
             </article>
 
             <!-- Item 4: Trufado Artesanal -->
-            <article class="product-card" data-category="hamburgueres" data-available="true">
+            <article class="product-card" data-category="hamburgueres">
               <div class="product-img-wrapper">
                 <span class="product-badge badge-available">Especial do Chef</span>
-                <img src="assets/images/burger-truffle.jpg" alt="Trufado Artesanal" class="product-img">
+                <img src="assets/images/burger-truffle.jpg" alt="Trufado Artesanal" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Trufado Artesanal</h3>
@@ -224,6 +227,102 @@
                     <button type="button" class="qty-btn" aria-label="Aumentar">+</button>
                   </div>
                   <button type="button" class="btn-add-product" aria-label="Adicionar Trufado Artesanal ao pedido">
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    <span>Adicionar</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item 5: Pixel Smash -->
+            <article class="product-card" data-category="hamburgueres">
+              <div class="product-img-wrapper">
+                <span class="product-badge badge-available">Especial do Chef</span>
+                <img src="assets/images/PixelSmash.jpg" alt="Pixel Smash" class="product-img" loading="lazy">
+              </div>
+              <div class="product-content">
+                <h3 class="product-title">Pixel Smash</h3>
+                <p class="product-desc">Pão brioche tostado, dois hambúrgueres smash de carne bovina, queijo cheddar derretido, alface americana, tomate, picles e molho especial da casa.</p>
+                <div class="product-price">R$ 29,90</div>
+                <div class="product-actions">
+                  <div class="qty-selector" aria-label="Controle de quantidade">
+                    <button type="button" class="qty-btn" aria-label="Diminuir">−</button>
+                    <span class="qty-number">1</span>
+                    <button type="button" class="qty-btn" aria-label="Aumentar">+</button>
+                  </div>
+                  <button type="button" class="btn-add-product" aria-label="Adicionar Pixel Smash ao pedido">
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    <span>Adicionar</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item 6: Boss Bacon -->
+            <article class="product-card" data-category="hamburgueres">
+              <div class="product-img-wrapper">
+                <span class="product-badge badge-available">Especial do Chef</span>
+                <img src="assets/images/BossBacon.jpg" alt="Boss Bacon" class="product-img" loading="lazy">
+              </div>
+              <div class="product-content">
+                <h3 class="product-title">Boss Bacon</h3>
+                <p class="product-desc">Pão brioche, hambúrguer bovino artesanal de 180 g, cheddar cremoso, tiras de bacon crocante, anéis de cebola empanados e molho barbecue.</p>
+                <div class="product-price">R$ 37,90</div>
+                <div class="product-actions">
+                  <div class="qty-selector" aria-label="Controle de quantidade">
+                    <button type="button" class="qty-btn" aria-label="Diminuir">−</button>
+                    <span class="qty-number">1</span>
+                    <button type="button" class="qty-btn" aria-label="Aumentar">+</button>
+                  </div>
+                  <button type="button" class="btn-add-product" aria-label="Adicionar Boss Bacon ao pedido">
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    <span>Adicionar</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item 7: XP Chicken -->
+            <article class="product-card" data-category="hamburgueres">
+              <div class="product-img-wrapper">
+                <span class="product-badge badge-available">Especial do Chef</span>
+                <img src="assets/images/XPChicken.jpg" alt="XP Chicken" class="product-img" loading="lazy">
+              </div>
+              <div class="product-content">
+                <h3 class="product-title">XP Chicken</h3>
+                <p class="product-desc">Pão brioche, filé de frango empanado e crocante, queijo cheddar, alface fresca, tomate e maionese verde temperada com ervas.</p>
+                <div class="product-price">R$ 31,90</div>
+                <div class="product-actions">
+                  <div class="qty-selector" aria-label="Controle de quantidade">
+                    <button type="button" class="qty-btn" aria-label="Diminuir">−</button>
+                    <span class="qty-number">1</span>
+                    <button type="button" class="qty-btn" aria-label="Aumentar">+</button>
+                  </div>
+                  <button type="button" class="btn-add-product" aria-label="Adicionar XP Chicken ao pedido">
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    <span>Adicionar</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item 8: Double Respawn -->
+            <article class="product-card" data-category="hamburgueres">
+              <div class="product-img-wrapper">
+                <span class="product-badge badge-available">Especial do Chef</span>
+                <img src="assets/images/DoubleRespawn.jpg" alt="Double Respawn" class="product-img" loading="lazy">
+              </div>
+              <div class="product-content">
+                <h3 class="product-title">Double Respawn</h3>
+                <p class="product-desc">Pão brioche, dois hambúrgueres bovinos artesanais, duas camadas de cheddar, cebola caramelizada, picles e molho especial da casa.</p>
+                <div class="product-price">R$ 36,90</div>
+                <div class="product-actions">
+                  <div class="qty-selector" aria-label="Controle de quantidade">
+                    <button type="button" class="qty-btn" aria-label="Diminuir">−</button>
+                    <span class="qty-number">1</span>
+                    <button type="button" class="qty-btn" aria-label="Aumentar">+</button>
+                  </div>
+                  <button type="button" class="btn-add-product" aria-label="Adicionar Double Respawn ao pedido">
                     <i class="fa-solid fa-plus" aria-hidden="true"></i>
                     <span>Adicionar</span>
                   </button>
@@ -244,11 +343,35 @@
 
           <div class="cardapio-grid">
 
-            <!-- Item 5: Combo Duplo Clássico -->
-            <article class="product-card" data-category="combos" data-available="true">
+             <!-- Item 1: Combo Player 1-->
+            <article class="product-card" data-category="combos">
               <div class="product-img-wrapper">
                 <span class="product-badge badge-popular">Mais Pedido</span>
-                <img src="assets/images/burger-combo.jpg" alt="Combo Duplo Clássico" class="product-img">
+                <img src="assets/images/ComboPlayer1.jpg" alt="Combo Player 1" class="product-img" loading="lazy">
+              </div>
+              <div class="product-content">
+                <h3 class="product-title">Combo Player 1</h3>
+                <p class="product-desc">Pixel Smash com duas carnes smash, cheddar, salada e molho especial + porção individual de batatas fritas crocantes + refrigerante de 350 ml.</p>
+                <div class="product-price">R$ 39,90</div>
+                <div class="product-actions">
+                  <div class="qty-selector" aria-label="Controle de quantidade">
+                    <button type="button" class="qty-btn" aria-label="Diminuir">−</button>
+                    <span class="qty-number">1</span>
+                    <button type="button" class="qty-btn" aria-label="Aumentar">+</button>
+                  </div>
+                  <button type="button" class="btn-add-product" aria-label="Adicionar Combo Player 1 ao pedido">
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    <span>Adicionar</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item 5: Combo Duplo Clássico -->
+            <article class="product-card" data-category="combos">
+              <div class="product-img-wrapper">
+                <span class="product-badge badge-popular">Mais Pedido</span>
+                <img src="assets/images/burger-combo.jpg" alt="Combo Duplo Clássico" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Combo Duplo Clássico</h3>
@@ -268,11 +391,35 @@
               </div>
             </article>
 
-            <!-- Item 6: Combo Bacon Lovers -->
-            <article class="product-card" data-category="combos" data-available="true">
+
+             <!-- Item 2: Combo Co-op -->
+            <article class="product-card" data-category="combos">
               <div class="product-img-wrapper">
-                <span class="product-badge badge-available">Disponível</span>
-                <img src="assets/images/banner-burger.jpg" alt="Combo Bacon Lovers" class="product-img">
+                <span class="product-badge badge-popular">Mais Pedido</span>
+                <img src="assets/images/ComboCoOp.jpg" alt="Combo Co-op" class="product-img" loading="lazy">
+              </div>
+              <div class="product-content">
+                <h3 class="product-title">Combo Co-op</h3>
+                <p class="product-desc">1 Boss Bacon com hambúrguer artesanal, cheddar, bacon, onion rings e barbecue + porção de batatas rústicas temperadas + refrigerante de 350 ml.</p>
+                <div class="product-price">R$ 44,90</div>
+                <div class="product-actions">
+                  <div class="qty-selector" aria-label="Controle de quantidade">
+                    <button type="button" class="qty-btn" aria-label="Diminuir">−</button>
+                    <span class="qty-number">1</span>
+                    <button type="button" class="qty-btn" aria-label="Aumentar">+</button>
+                  </div>
+                  <button type="button" class="btn-add-product" aria-label="Adicionar Combo Duplo ao pedido">
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    <span>Adicionar</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item 6: Combo Bacon Lovers -->
+            <article class="product-card" data-category="combos">
+              <div class="product-img-wrapper">
+                <img src="assets/images/ComboBaconLovers.jpg" alt="Combo Bacon Lovers" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Combo Bacon Lovers</h3>
@@ -306,10 +453,9 @@
           <div class="cardapio-grid">
 
             <!-- Item 7: Batata Frita Crocante -->
-            <article class="product-card" data-category="acompanhamentos" data-available="true">
+            <article class="product-card" data-category="acompanhamentos">
               <div class="product-img-wrapper">
-                <span class="product-badge badge-available">Disponível</span>
-                <img src="assets/images/fries.jpg" alt="Batata Frita Crocante" class="product-img">
+                <img src="assets/images/BatataFritaCrocante.jpg" alt="Batata Frita Crocante" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Batata Frita Crocante</h3>
@@ -330,10 +476,9 @@
             </article>
 
             <!-- Item 8: Onion Rings Especial -->
-            <article class="product-card" data-category="acompanhamentos" data-available="true">
+            <article class="product-card" data-category="acompanhamentos">
               <div class="product-img-wrapper">
-                <span class="product-badge badge-available">Disponível</span>
-                <img src="assets/images/onion-rings.jpg" alt="Onion Rings Especial" class="product-img">
+                <img src="assets/images/OnionRingsEspecial.jpg" alt="Onion Rings Especial" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Onion Rings Especial</h3>
@@ -354,10 +499,9 @@
             </article>
 
             <!-- Item 9: Nuggets Artesanais -->
-            <article class="product-card" data-category="acompanhamentos" data-available="true">
+            <article class="product-card" data-category="acompanhamentos">
               <div class="product-img-wrapper">
-                <span class="product-badge badge-available">Disponível</span>
-                <img src="assets/images/nuggets.jpg" alt="Nuggets Artesanais" class="product-img">
+                <img src="assets/images/NuggetsArtesanais.jpg" alt="Nuggets Artesanais" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Nuggets Artesanais (8 un)</h3>
@@ -391,10 +535,9 @@
           <div class="cardapio-grid">
 
             <!-- Item 10: Coca-Cola 350ml -->
-            <article class="product-card" data-category="bebidas" data-available="true">
+            <article class="product-card" data-category="bebidas">
               <div class="product-img-wrapper">
-                <span class="product-badge badge-available">Disponível</span>
-                <img src="assets/images/drinks.jpg" alt="Coca-Cola 350ml" class="product-img">
+                <img src="assets/images/drinks.jpg" alt="Coca-Cola 350ml" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Coca-Cola Lata 350ml</h3>
@@ -414,16 +557,16 @@
               </div>
             </article>
 
-            <!-- Item 11: Milkshake de Chocolate -->
-            <article class="product-card" data-category="bebidas" data-available="true">
+            <!-- Item 11: Refrigerante Sprite-->
+            <article class="product-card" data-category="bebidas">
               <div class="product-img-wrapper">
                 <span class="product-badge badge-popular">Favorito</span>
-                <img src="assets/images/milkshake.jpg" alt="Milkshake de Chocolate Artesanal" class="product-img">
+                <img src="assets/images/Sprite.png" alt="Sprite" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
-                <h3 class="product-title">Milkshake de Chocolate 450ml</h3>
-                <p class="product-desc">Sorvete artesanal batido com calda de cacau 70%, chantilly fresco e raspas de chocolate belga.</p>
-                <div class="product-price">R$ 18,90</div>
+                <h3 class="product-title">Sprite Lata 350ml</h3>
+                <p class="product-desc">Refrigerante Sprite 350ml.</p>
+                <div class="product-price">R$ 7,00</div>
                 <div class="product-actions">
                   <div class="qty-selector" aria-label="Controle de quantidade">
                     <button type="button" class="qty-btn" aria-label="Diminuir">−</button>
@@ -438,25 +581,24 @@
               </div>
             </article>
 
-            <!-- Item 12: Guaraná Antarctica (Esgotado) -->
-            <article class="product-card is-soldout" data-category="bebidas" data-available="false">
+            <!-- Item 12: Guaraná Antarctica -->
+            <article class="product-card" data-category="bebidas">
               <div class="product-img-wrapper">
-                <span class="product-badge badge-soldout">Esgotado</span>
-                <img src="assets/images/drinks.jpg" alt="Guaraná Antarctica 350ml" class="product-img">
+                <img src="assets/images/guarana.png" alt="Guaraná Antarctica 350ml" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Guaraná Antarctica 350ml</h3>
-                <p class="product-desc">Refrigerante Guaraná Antarctica lata 350ml gelada. (Indisponível no momento).</p>
+                <p class="product-desc">Refrigerante Guaraná Antarctica lata 350ml gelada.</p>
                 <div class="product-price">R$ 7,00</div>
                 <div class="product-actions">
-                  <div class="qty-selector" aria-label="Controle de quantidade desabilitado">
-                    <button type="button" class="qty-btn" disabled aria-label="Desabilitado">−</button>
-                    <span class="qty-number">0</span>
-                    <button type="button" class="qty-btn" disabled aria-label="Desabilitado">+</button>
+                  <div class="qty-selector" aria-label="Controle de quantidade">
+                    <button type="button" class="qty-btn" aria-label="Diminuir">−</button>
+                    <span class="qty-number">1</span>
+                    <button type="button" class="qty-btn" aria-label="Aumentar">+</button>
                   </div>
-                  <button type="button" class="btn-add-product btn-disabled" disabled aria-label="Item indisponível">
-                    <i class="fa-solid fa-ban" aria-hidden="true"></i>
-                    <span>Indisponível</span>
+                  <button type="button" class="btn-add-product" aria-label="Adicionar Guaraná Antarctica ao pedido">
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    <span>Adicionar</span>
                   </button>
                 </div>
               </div>
@@ -476,10 +618,9 @@
           <div class="cardapio-grid">
 
             <!-- Item 13: Brownie com Sorvete -->
-            <article class="product-card" data-category="sobremesas" data-available="true">
+            <article class="product-card" data-category="sobremesas">
               <div class="product-img-wrapper">
-                <span class="product-badge badge-available">Disponível</span>
-                <img src="assets/images/dessert.jpg" alt="Brownie com Sorvete" class="product-img">
+                <img src="assets/images/dessert.jpg" alt="Brownie com Sorvete" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Brownie com Sorvete</h3>
@@ -523,6 +664,8 @@
 
   </div>
 
+  <!-- Primeiro as ações compartilhadas; depois o código específico desta tela. -->
+  <script src="assets/js/comum.js"></script>
   <script src="assets/js/cardapio.js"></script>
 </body>
 </html>

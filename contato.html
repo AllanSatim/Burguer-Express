@@ -3,20 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contato &amp; Localização — Burguer Express</title>
-  <meta name="description" content="Entre em contato com a lanchonete Burguer Express. Confira nosso endereço físico, horários de atendimento no salão, WhatsApp e envie sua mensagem.">
-  <link rel="stylesheet" href="assets/css/global.css">
-  <link rel="stylesheet" href="assets/css/contato.css">
+  <title>Contato &amp; Localização — Pixel Burguer</title>
+  <meta name="description" content="Entre em contato com a Pixel Burguer. Confira nosso endereço, horários de atendimento, WhatsApp e envie sua mensagem.">
+  <!-- CSS base mantém o layout; o tema abaixo personaliza cores e componentes. -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/tema-gamer.css">
 </head>
 <body>
+  <!-- Acessibilidade: permite pular a navegação usando a tecla Tab. -->
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
 
+  <!-- Contato: reúne localização, canais de atendimento e formulário de mensagem. -->
   <div class="app-layout">
 
     <!-- BARRA LATERAL (SIDEBAR) -->
     <aside class="sidebar" aria-label="Menu Principal">
       <div>
-        <a href="index.html" class="sidebar-brand" title="Burguer Express - Início">
-          <img src="assets/images/logo.svg" alt="Burguer Express Logo" class="logo-img">
+        <a href="index.html" class="sidebar-brand" title="Pixel Burguer - Início">
+          <img src="assets/images/LogoPixelBurguer1.png" alt="Pixel Burguer" class="logo-img">
         </a>
 
         <nav class="sidebar-nav">
@@ -32,7 +36,7 @@
             <i class="fa-solid fa-receipt" aria-hidden="true"></i>
             <span>Meu Pedido</span>
           </a>
-          <a href="sobre.html" class="nav-link" title="Sobre a Burguer Express">
+          <a href="sobre.html" class="nav-link" title="Sobre a Pixel Burguer">
             <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
             <span>Sobre</span>
           </a>
@@ -51,7 +55,7 @@
 
       <!-- Rodapé da barra lateral -->
       <div class="sidebar-footer">
-        <img src="assets/images/burger-icon.svg" alt="" class="footer-icon" aria-hidden="true">
+        <img src="assets/images/LogoPixelBurguer1.png" alt="" class="footer-icon" aria-hidden="true">
         <p class="footer-text">Sabor, qualidade e aquele toque especial em cada mordida.</p>
         <div class="accent-line" aria-hidden="true"></div>
       </div>
@@ -79,7 +83,7 @@
       </header>
 
       <!-- CONTEÚDO PRINCIPAL: CONTATO -->
-      <main class="page-container">
+      <main class="page-container" id="conteudo-principal">
 
         <header class="contato-header">
           <h1>Fale Conosco &amp; Onde Estamos</h1>
@@ -98,7 +102,7 @@
               </div>
               <div class="contato-info-content">
                 <h3>Nosso Endereço Físico</h3>
-                <p><strong>Burguer Express — Salão Principal</strong></p>
+                <p><strong>Pixel Burguer — Salão Principal</strong></p>
                 <p>Rua dos Burgers, 120 - Centro Gastronômico</p>
                 <p>São Paulo - SP • CEP 01310-100</p>
               </div>
@@ -150,7 +154,7 @@
             <h2 class="contato-form-title">Envie sua mensagem</h2>
             <p class="contato-form-desc">Tem uma dúvida sobre o cardápio, sugestão ou elogio? Preencha os campos abaixo.</p>
 
-            <form action="#" method="post" novalidate onsubmit="return false;">
+            <form action="#" method="post">
 
               <!-- Nome -->
               <div class="form-group">
@@ -214,7 +218,8 @@
 
   </div>
 
+  <!-- Primeiro as ações compartilhadas; depois o código específico desta tela. -->
+  <script src="assets/js/comum.js"></script>
   <script src="assets/js/contato.js"></script>
 </body>
 </html>
-

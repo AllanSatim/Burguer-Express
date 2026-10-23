@@ -3,32 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Central Administrativa — Burguer Express</title>
-  <meta name="description" content="Painel de controle e gerenciamento de comandas e pedidos no salão da lanchonete Burguer Express.">
-  <link rel="stylesheet" href="assets/css/global.css">
-  <link rel="stylesheet" href="assets/css/admin.css">
+  <title>Central de Comando da Cozinha — Pixel Burguer</title>
+  <meta name="description" content="Painel de controle gamer e esteira de produção de pedidos da hamburgueria.">
+  <!-- CSS base mantém o layout; o tema abaixo personaliza cores e componentes. -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/tema-gamer.css">
 </head>
 <body>
+  <!-- Acessibilidade: permite pular a navegação usando a tecla Tab. -->
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
+
+  <!-- Painel da cozinha: apresenta pedidos, filtros de status e histórico administrativo. -->
+  <!-- ===================================================================
+       CONTROLES DE FILTRO EM PURO CSS (100% Zero JavaScript)
+       Alterna entre: Todos, Recebidos, Em preparo, Prontos e Encerrados
+       =================================================================== -->
+  <input type="radio" name="order-status-filter" id="filter-all" class="order-filter-radio" checked>
+  <input type="radio" name="order-status-filter" id="filter-recebidos" class="order-filter-radio">
+  <input type="radio" name="order-status-filter" id="filter-preparo" class="order-filter-radio">
+  <input type="radio" name="order-status-filter" id="filter-prontos" class="order-filter-radio">
+  <input type="radio" name="order-status-filter" id="filter-finalizados" class="order-filter-radio">
 
   <div class="app-layout">
 
     <!-- MENU LATERAL ADMINISTRATIVO -->
     <aside class="sidebar" aria-label="Navegação Administrativa">
       <div>
-        <a href="admin.html" class="sidebar-brand" title="Burguer Express - Painel Admin">
-          <img src="assets/images/logo.svg" alt="Burguer Express Logo" class="logo-img">
+        <a href="admin.html" class="sidebar-brand" title="Pixel Burguer - Painel Admin">
+          <img src="assets/images/LogoPixelBurguer1.png" alt="Pixel Burguer" class="logo-img">
         </a>
 
         <nav class="sidebar-nav">
-          <a href="#" class="nav-link active" data-admin-view="visao-geral" title="Visão Geral do Painel (Kanban)">
-            <i class="fa-solid fa-chart-pie" aria-hidden="true"></i>
-            <span>Visão geral</span>
+          <a href="admin.html" class="nav-link active" title="Fila de Pedidos (Kanban)">
+            <i class="fa-solid fa-gamepad" aria-hidden="true" style="color: var(--neon-cyan);"></i>
+            <span>Fila de Pedidos</span>
           </a>
-          <a href="#" class="nav-link" data-admin-view="mesas" title="Controle de Mesas &amp; Comandas">
-            <i class="fa-solid fa-chair" aria-hidden="true"></i>
-            <span>Mesas &amp; Comandas</span>
-          </a>
-          <a href="#" class="nav-link" data-admin-view="historico" title="Histórico de Vendas">
+          <a href="#view-historico" class="nav-link" title="Histórico de Vendas">
             <i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i>
             <span>Histórico</span>
           </a>
@@ -40,17 +50,17 @@
             <i class="fa-solid fa-store" aria-hidden="true"></i>
             <span>Voltar ao Salão</span>
           </a>
-          <a href="login.html" class="nav-link" title="Sair da Conta de Administrador" style="margin-top: 16px; color: #F87171;">
-            <i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true" style="color: #F87171;"></i>
-            <span>Sair</span>
+          <a href="login.html" class="nav-link" title="Sair da Conta de Administrador" style="margin-top: 16px; color: #FF2E63;">
+            <i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true" style="color: #FF2E63;"></i>
+            <span>Sair do Admin</span>
           </a>
         </nav>
       </div>
 
       <!-- Rodapé do menu administrativo -->
       <div class="sidebar-footer">
-        <img src="assets/images/burger-icon.svg" alt="" class="footer-icon" aria-hidden="true">
-        <p class="footer-text">Painel de Comandas &amp; Atendimento no Salão</p>
+        <img src="assets/images/LogoPixelBurguer1.png" alt="" class="footer-icon" aria-hidden="true">
+        <p class="footer-text">Central de Produção &amp; Pedidos Gamer</p>
         <div class="accent-line" aria-hidden="true"></div>
       </div>
     </aside>
@@ -63,26 +73,26 @@
 
         <header class="admin-top-bar">
           <div class="admin-title-area">
-            <h1>Central de Pedidos da Lanchonete</h1>
+            <h1>Central de Comando da Cozinha</h1>
             <p>
-              <i class="fa-regular fa-calendar-days" aria-hidden="true"></i>
-              <span>Quarta-feira, 21 de Outubro • 19:45 — Controle de Mesas e Comandas</span>
+              <i class="fa-solid fa-gamepad" aria-hidden="true" style="color: var(--neon-cyan);"></i>
+              <span>Demonstração visual de pedidos • Dados fictícios • HUD Gamer</span>
             </p>
           </div>
 
           <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
-            <!-- Indicador Salão Aberto -->
+            <!-- Indicador Servidor Aberto -->
             <div class="store-status-badge">
               <span class="status-indicator-dot" aria-hidden="true"></span>
-              <span>Salão Aberto • Mesas Ativas</span>
+              <span>Modo demonstração • Sem backend</span>
             </div>
 
             <!-- Perfil do Administrador -->
             <div class="admin-user-profile">
-              <div class="admin-avatar">CS</div>
+              <div class="admin-avatar">AD</div>
               <div class="admin-user-info">
                 <span class="admin-user-name">Carlos Silva</span>
-                <span class="admin-user-role">Gerente da Lanchonete</span>
+                <span class="admin-user-role">Gerente • Admin Level 99</span>
               </div>
             </div>
           </div>
@@ -90,108 +100,116 @@
 
         <!-- SUB-NAV DE TELAS (ABAS RÁPIDAS) -->
         <nav class="admin-view-tabs" aria-label="Seções Administrativas">
-          <button type="button" class="admin-tab-btn active" data-admin-view="visao-geral">
-            <i class="fa-solid fa-chart-pie" aria-hidden="true"></i>
-            <span>Visão Geral (Esteira Kanban)</span>
-          </button>
-          <button type="button" class="admin-tab-btn" data-admin-view="mesas">
-            <i class="fa-solid fa-chair" aria-hidden="true"></i>
-            <span>Mesas &amp; Comandas</span>
-          </button>
-          <button type="button" class="admin-tab-btn" data-admin-view="historico">
+          <a href="admin.html" class="admin-tab-btn active">
+            <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+            <span>Fila de Pedidos (Kanban)</span>
+          </a>
+          <a href="#view-historico" class="admin-tab-btn">
             <i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i>
             <span>Histórico de Vendas</span>
-          </button>
+          </a>
         </nav>
 
         <!-- ===================================================================
-             TELA 1: VISÃO GERAL (KANBAN COM FILTRAGEM, RECEBIDOS, PREPARO, PRONTOS, FINALIZADOS)
+             TELA 1: VISÃO GERAL (KANBAN COM FILTRAGEM: TODOS, RECEBIDOS, PREPARO, PRONTOS, ENCERRADOS)
              =================================================================== -->
         <div id="view-visao-geral" class="admin-tab-view" style="display: block;">
 
-          <!-- INDICADORES (KPI CARDS COM CONTAGEM EM TEMPO REAL) -->
+          <!-- INDICADORES (KPI CARDS - CLIQUES ALTERNAM O FILTRO PURO CSS) -->
           <section class="kpi-indicators-grid" aria-label="Indicadores de Pedidos">
 
             <!-- Indicador 1: Recebidos -->
-            <article class="kpi-card kpi-recebidos" data-filter-status="recebidos" title="Filtrar por Recebidos">
+            <label for="filter-recebidos" class="kpi-card kpi-recebidos" title="Clique para filtrar apenas pedidos Recebidos">
               <div class="kpi-info">
                 <span class="kpi-label">Pedidos Recebidos</span>
-                <span class="kpi-value" id="kpi-val-recebidos">0</span>
+                <span class="kpi-value" id="kpi-val-recebidos">2</span>
                 <span class="kpi-sub">Novos pedidos nas mesas</span>
               </div>
               <div class="kpi-icon-box" aria-hidden="true">
                 <i class="fa-solid fa-bell"></i>
               </div>
-            </article>
+            </label>
 
             <!-- Indicador 2: Em Preparo -->
-            <article class="kpi-card kpi-preparo" data-filter-status="preparo" title="Filtrar por Em Preparo">
+            <label for="filter-preparo" class="kpi-card kpi-preparo" title="Clique para filtrar apenas pedidos Em Preparo">
               <div class="kpi-info">
                 <span class="kpi-label">Em Preparo na Chapa</span>
-                <span class="kpi-value" id="kpi-val-preparo">0</span>
+                <span class="kpi-value" id="kpi-val-preparo">1</span>
                 <span class="kpi-sub">Cozinha montando</span>
               </div>
               <div class="kpi-icon-box" aria-hidden="true">
                 <i class="fa-solid fa-fire-burner"></i>
               </div>
-            </article>
+            </label>
 
             <!-- Indicador 3: Prontos / Servir -->
-            <article class="kpi-card kpi-prontos" data-filter-status="prontos" title="Filtrar por Prontos">
+            <label for="filter-prontos" class="kpi-card kpi-prontos" title="Clique para filtrar apenas pedidos Prontos">
               <div class="kpi-info">
                 <span class="kpi-label">Prontos para Servir</span>
-                <span class="kpi-value" id="kpi-val-prontos">0</span>
+                <span class="kpi-value" id="kpi-val-prontos">1</span>
                 <span class="kpi-sub">Levar à mesa do cliente</span>
               </div>
               <div class="kpi-icon-box" aria-hidden="true">
                 <i class="fa-solid fa-bell-concierge"></i>
               </div>
-            </article>
+            </label>
 
             <!-- Indicador 4: Finalizados / Conta Paga -->
-            <article class="kpi-card kpi-finalizados" data-filter-status="finalizados" title="Filtrar por Finalizados">
+            <label for="filter-finalizados" class="kpi-card kpi-finalizados" title="Clique para filtrar apenas pedidos Encerrados">
               <div class="kpi-info">
-                <span class="kpi-label">Finalizados (Conta Paga)</span>
-                <span class="kpi-value" id="kpi-val-finalizados">0</span>
-                <span class="kpi-sub">Comandas encerradas hoje</span>
+                <span class="kpi-label">Encerrados (Conta Paga)</span>
+                <span class="kpi-value" id="kpi-val-finalizados">1</span>
+                <span class="kpi-sub">Contas fechadas hoje</span>
               </div>
               <div class="kpi-icon-box" aria-hidden="true">
                 <i class="fa-solid fa-circle-check"></i>
               </div>
-            </article>
+            </label>
 
           </section>
 
-          <!-- BARRA DE FILTROS, BUSCA E BOTÃO ADICIONAR NOVO PEDIDO -->
+          <!-- BARRA DE FILTROS E BUSCA -->
           <section class="admin-filters-bar" aria-label="Filtros e Ações de Pedidos">
             <div class="filter-groups">
-              <!-- Filtro por Status -->
-              <button type="button" class="filter-btn active" data-filter-status="all">Todos</button>
-              <button type="button" class="filter-btn" data-filter-status="recebidos">Recebidos</button>
-              <button type="button" class="filter-btn" data-filter-status="preparo">Em preparo</button>
-              <button type="button" class="filter-btn" data-filter-status="prontos">Prontos</button>
-              <button type="button" class="filter-btn" data-filter-status="finalizados">Encerrados</button>
+              <!-- Filtro por Status (Controlado 100% via CSS) -->
+              <label for="filter-all" class="filter-btn filter-label-all" title="Exibir todos os pedidos em todas as etapas">
+                <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+                <span>Todos</span>
+              </label>
 
-              <!-- Filtro por Local no Salão -->
-              <select id="filter-accommodation" class="filter-select" aria-label="Filtrar por mesa ou balcão">
-                <option value="todas">Todas as acomodações</option>
-                <option value="mesas">Apenas Mesas do Salão</option>
-                <option value="balcao">Apenas Pedidos no Balcão</option>
-              </select>
+              <label for="filter-recebidos" class="filter-btn filter-label-recebidos" title="Exibir apenas pedidos recebidos">
+                <i class="fa-solid fa-bell" aria-hidden="true" style="color: #FFAA16;"></i>
+                <span>Recebidos</span>
+              </label>
+
+              <label for="filter-preparo" class="filter-btn filter-label-preparo" title="Exibir apenas pedidos em preparo">
+                <i class="fa-solid fa-fire-burner" aria-hidden="true" style="color: #00F0FF;"></i>
+                <span>Em preparo</span>
+              </label>
+
+              <label for="filter-prontos" class="filter-btn filter-label-prontos" title="Exibir apenas pedidos prontos para servir">
+                <i class="fa-solid fa-bell-concierge" aria-hidden="true" style="color: #00FF88;"></i>
+                <span>Prontos</span>
+              </label>
+
+              <label for="filter-finalizados" class="filter-btn filter-label-finalizados" title="Exibir apenas pedidos encerrados">
+                <i class="fa-solid fa-circle-check" aria-hidden="true" style="color: #BD00FF;"></i>
+                <span>Encerrados</span>
+              </label>
             </div>
 
             <div class="admin-toolbar-actions">
-              <!-- Busca em tempo real -->
+              <!-- Busca de Pedidos -->
               <div class="admin-search-input">
                 <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
                 <input type="search" id="admin-search-field" placeholder="Buscar por mesa, comanda ou cliente..." aria-label="Buscar pedidos">
               </div>
 
               <!-- Botão Adicionar Novo Pedido -->
-              <button type="button" id="btn-open-add-order" class="btn-add-order">
+              <a href="#modal-add-order" class="btn btn-gamer-cyan btn-sm">
                 <i class="fa-solid fa-plus" aria-hidden="true"></i>
                 <span>Novo Pedido</span>
-              </button>
+              </a>
             </div>
           </section>
 
@@ -202,13 +220,101 @@
             <div class="kanban-column col-recebidos">
               <div class="kanban-col-header">
                 <div class="kanban-col-title">
-                  <i class="fa-solid fa-bell" style="color: #FBBF24;" aria-hidden="true"></i>
+                  <i class="fa-solid fa-bell" style="color: #FFAA16;" aria-hidden="true"></i>
                   <span>Recebidos</span>
                 </div>
-                <span class="col-badge" id="badge-col-recebidos">0 na fila</span>
+                <span class="col-badge" id="badge-col-recebidos">2 na fila</span>
               </div>
               <div id="kanban-col-recebidos-cards" class="kanban-cards-container">
-                <!-- Renderizado via JavaScript dinamicamente -->
+                
+                <!-- Card 1: Mariana Souza -->
+                <article class="order-card">
+                  <div class="order-header-row">
+                    <span class="order-id">#1042</span>
+                    <span class="order-time"><i class="fa-regular fa-clock" aria-hidden="true"></i> 19:35 (há 10 min)</span>
+                  </div>
+                  <div class="order-customer-row">
+                    <div class="order-customer">
+                      <i class="fa-regular fa-user" aria-hidden="true"></i>
+                      <span>Mariana Souza</span>
+                    </div>
+                  </div>
+                  <div class="order-modality-block">
+                    <span class="status-tag tag-table"><i class="fa-solid fa-chair"></i> Mesa 04</span>
+                    <p class="order-address-text"><i class="fa-solid fa-location-crosshairs"></i> Salão Principal • Próximo ao Setup 01</p>
+                  </div>
+                  <div class="order-items-list">
+                    <div class="order-item-line">
+                      <span><strong class="order-item-qty">1x</strong> Bacon Burger</span>
+                      <span>R$ 27,90</span>
+                    </div>
+                    <div class="order-item-line">
+                      <span><strong class="order-item-qty">1x</strong> Batata Frita Crocante</span>
+                      <span>R$ 12,90</span>
+                    </div>
+                    <div class="order-item-line">
+                      <span><strong class="order-item-qty">1x</strong> Coca-Cola 350ml</span>
+                      <span>R$ 7,00</span>
+                    </div>
+                  </div>
+                  <div class="order-notes-box">
+                    <i class="fa-regular fa-comment-dots" aria-hidden="true"></i>
+                    <span>Obs: Ponto da carne bem passado, refrigerante bem gelado.</span>
+                  </div>
+                  <div class="order-footer-info">
+                    <span class="order-total-price">R$ 47,80</span>
+                    <span class="order-payment-method"><i class="fa-solid fa-wallet"></i> PIX (Ao fechar conta)</span>
+                  </div>
+                  <div class="order-card-actions">
+                    <button type="button" class="btn-card-action btn-action-primary">
+                      <i class="fa-solid fa-fire-burner" aria-hidden="true"></i>
+                      <span>Iniciar preparo</span>
+                    </button>
+                  </div>
+                </article>
+
+                <!-- Card 2: Lucas Almeida -->
+                <article class="order-card">
+                  <div class="order-header-row">
+                    <span class="order-id">#1043</span>
+                    <span class="order-time"><i class="fa-regular fa-clock" aria-hidden="true"></i> 19:41 (há 4 min)</span>
+                  </div>
+                  <div class="order-customer-row">
+                    <div class="order-customer">
+                      <i class="fa-regular fa-user" aria-hidden="true"></i>
+                      <span>Lucas Almeida</span>
+                    </div>
+                  </div>
+                  <div class="order-modality-block">
+                    <span class="status-tag tag-table"><i class="fa-solid fa-chair"></i> Mesa 08</span>
+                    <p class="order-address-text"><i class="fa-solid fa-location-crosshairs"></i> Salão Superior • Mezanino Gamer</p>
+                  </div>
+                  <div class="order-items-list">
+                    <div class="order-item-line">
+                      <span><strong class="order-item-qty">2x</strong> Cheeseburger Clássico</span>
+                      <span>R$ 49,80</span>
+                    </div>
+                    <div class="order-item-line">
+                      <span><strong class="order-item-qty">1x</strong> Onion Rings Especial</span>
+                      <span>R$ 15,90</span>
+                    </div>
+                  </div>
+                  <div class="order-notes-box">
+                    <i class="fa-regular fa-comment-dots" aria-hidden="true"></i>
+                    <span>Obs: Sem cebola em um dos burgers.</span>
+                  </div>
+                  <div class="order-footer-info">
+                    <span class="order-total-price">R$ 65,70</span>
+                    <span class="order-payment-method"><i class="fa-solid fa-wallet"></i> Cartão Crédito (Ao fechar)</span>
+                  </div>
+                  <div class="order-card-actions">
+                    <button type="button" class="btn-card-action btn-action-primary">
+                      <i class="fa-solid fa-fire-burner" aria-hidden="true"></i>
+                      <span>Iniciar preparo</span>
+                    </button>
+                  </div>
+                </article>
+
               </div>
             </div>
 
@@ -216,13 +322,55 @@
             <div class="kanban-column col-preparo">
               <div class="kanban-col-header">
                 <div class="kanban-col-title">
-                  <i class="fa-solid fa-fire-burner" style="color: #60A5FA;" aria-hidden="true"></i>
+                  <i class="fa-solid fa-fire-burner" style="color: #00F0FF;" aria-hidden="true"></i>
                   <span>Em preparo</span>
                 </div>
-                <span class="col-badge" id="badge-col-preparo">0 na chapa</span>
+                <span class="col-badge" id="badge-col-preparo">1 na chapa</span>
               </div>
               <div id="kanban-col-preparo-cards" class="kanban-cards-container">
-                <!-- Renderizado via JavaScript dinamicamente -->
+                
+                <!-- Card: Camila Ribeiro -->
+                <article class="order-card">
+                  <div class="order-header-row">
+                    <span class="order-id">#1040</span>
+                    <span class="order-time"><i class="fa-regular fa-clock" aria-hidden="true"></i> 19:22 (na chapa)</span>
+                  </div>
+                  <div class="order-customer-row">
+                    <div class="order-customer">
+                      <i class="fa-regular fa-user" aria-hidden="true"></i>
+                      <span>Camila Ribeiro</span>
+                    </div>
+                  </div>
+                  <div class="order-modality-block">
+                    <span class="status-tag tag-counter"><i class="fa-solid fa-gamepad"></i> Balcão 02</span>
+                    <p class="order-address-text"><i class="fa-solid fa-location-crosshairs"></i> Consumo no Balcão • Banco 02</p>
+                  </div>
+                  <div class="order-items-list">
+                    <div class="order-item-line">
+                      <span><strong class="order-item-qty">1x</strong> Combo Duplo Clássico</span>
+                      <span>R$ 42,90</span>
+                    </div>
+                    <div class="order-item-line">
+                      <span><strong class="order-item-qty">1x</strong> Milkshake de Chocolate</span>
+                      <span>R$ 18,90</span>
+                    </div>
+                  </div>
+                  <div class="order-notes-box">
+                    <i class="fa-regular fa-comment-dots" aria-hidden="true"></i>
+                    <span>Obs: Cortar burger ao meio, servir milkshake junto.</span>
+                  </div>
+                  <div class="order-footer-info">
+                    <span class="order-total-price">R$ 61,80</span>
+                    <span class="order-payment-method"><i class="fa-solid fa-wallet"></i> Cartão Débito (Ao fechar)</span>
+                  </div>
+                  <div class="order-card-actions">
+                    <button type="button" class="btn-card-action btn-action-blue">
+                      <i class="fa-solid fa-bell-concierge" aria-hidden="true"></i>
+                      <span>Marcar como pronto</span>
+                    </button>
+                  </div>
+                </article>
+
               </div>
             </div>
 
@@ -230,13 +378,55 @@
             <div class="kanban-column col-prontos">
               <div class="kanban-col-header">
                 <div class="kanban-col-title">
-                  <i class="fa-solid fa-bell-concierge" style="color: #4ADE80;" aria-hidden="true"></i>
+                  <i class="fa-solid fa-bell-concierge" style="color: #00FF88;" aria-hidden="true"></i>
                   <span>Prontos para Servir</span>
                 </div>
-                <span class="col-badge" id="badge-col-prontos">0 para servir</span>
+                <span class="col-badge" id="badge-col-prontos">1 para servir</span>
               </div>
               <div id="kanban-col-prontos-cards" class="kanban-cards-container">
-                <!-- Renderizado via JavaScript dinamicamente -->
+                
+                <!-- Card: Fernando Gomes -->
+                <article class="order-card">
+                  <div class="order-header-row">
+                    <span class="order-id">#1038</span>
+                    <span class="order-time"><i class="fa-regular fa-clock" aria-hidden="true"></i> 19:15 (pronto)</span>
+                  </div>
+                  <div class="order-customer-row">
+                    <div class="order-customer">
+                      <i class="fa-regular fa-user" aria-hidden="true"></i>
+                      <span>Fernando Gomes</span>
+                    </div>
+                  </div>
+                  <div class="order-modality-block">
+                    <span class="status-tag tag-table"><i class="fa-solid fa-chair"></i> Mesa 02</span>
+                    <p class="order-address-text"><i class="fa-solid fa-location-crosshairs"></i> Salão Principal • Levar à mesa agora</p>
+                  </div>
+                  <div class="order-items-list">
+                    <div class="order-item-line">
+                      <span><strong class="order-item-qty">1x</strong> Trufado Artesanal</span>
+                      <span>R$ 34,90</span>
+                    </div>
+                    <div class="order-item-line">
+                      <span><strong class="order-item-qty">1x</strong> Batata Frita Crocante</span>
+                      <span>R$ 12,90</span>
+                    </div>
+                  </div>
+                  <div class="order-notes-box">
+                    <i class="fa-regular fa-comment-dots" aria-hidden="true"></i>
+                    <span>Obs: Maionese extra em pote.</span>
+                  </div>
+                  <div class="order-footer-info">
+                    <span class="order-total-price">R$ 47,80</span>
+                    <span class="order-payment-method"><i class="fa-solid fa-wallet"></i> Dinheiro (Ao fechar conta)</span>
+                  </div>
+                  <div class="order-card-actions">
+                    <button type="button" class="btn-card-action btn-action-green">
+                      <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                      <span>Servido (Conta paga)</span>
+                    </button>
+                  </div>
+                </article>
+
               </div>
             </div>
 
@@ -244,13 +434,51 @@
             <div class="kanban-column col-finalizados">
               <div class="kanban-col-header">
                 <div class="kanban-col-title">
-                  <i class="fa-solid fa-circle-check" style="color: #CBD5E1;" aria-hidden="true"></i>
+                  <i class="fa-solid fa-circle-check" style="color: #BD00FF;" aria-hidden="true"></i>
                   <span>Conta Paga &amp; Encerrado</span>
                 </div>
-                <span class="col-badge" id="badge-col-finalizados">0 hoje</span>
+                <span class="col-badge" id="badge-col-finalizados">1 hoje</span>
               </div>
               <div id="kanban-col-finalizados-cards" class="kanban-cards-container">
-                <!-- Renderizado via JavaScript dinamicamente -->
+                
+                <!-- Card: Renata Castro -->
+                <article class="order-card" style="opacity: 0.85;">
+                  <div class="order-header-row">
+                    <span class="order-id">#1035</span>
+                    <span class="order-time"><i class="fa-regular fa-clock" aria-hidden="true"></i> 18:50 (Encerrado 19:10)</span>
+                  </div>
+                  <div class="order-customer-row">
+                    <div class="order-customer">
+                      <i class="fa-regular fa-user" aria-hidden="true"></i>
+                      <span>Renata Castro</span>
+                    </div>
+                  </div>
+                  <div class="order-modality-block">
+                    <span class="status-tag tag-table"><i class="fa-solid fa-chair"></i> Mesa 06</span>
+                    <p class="order-address-text"><i class="fa-solid fa-location-crosshairs"></i> Mesa liberada e higienizada</p>
+                  </div>
+                  <div class="order-items-list">
+                    <div class="order-item-line">
+                      <span><strong class="order-item-qty">2x</strong> Smash Burger Duplo</span>
+                      <span>R$ 59,80</span>
+                    </div>
+                    <div class="order-item-line">
+                      <span><strong class="order-item-qty">2x</strong> Coca-Cola 350ml</span>
+                      <span>R$ 14,00</span>
+                    </div>
+                  </div>
+                  <div class="order-footer-info">
+                    <span class="order-total-price">R$ 73,80</span>
+                    <span class="order-payment-method"><i class="fa-solid fa-circle-check"></i> Pago no Cartão de Crédito</span>
+                  </div>
+                  <div class="order-card-actions">
+                    <button type="button" class="btn-card-action btn-action-details">
+                      <i class="fa-regular fa-eye" aria-hidden="true"></i>
+                      <span>Ver Comanda Encerrada</span>
+                    </button>
+                  </div>
+                </article>
+
               </div>
             </div>
 
@@ -259,31 +487,9 @@
         </div>
 
         <!-- ===================================================================
-             TELA 2: MESAS & COMANDAS (VISÃO GERAL DO SALÃO FÍSICO)
+             TELA: HISTÓRICO DE VENDAS & COMANDAS ENCERRADAS
              =================================================================== -->
-        <div id="view-mesas" class="admin-tab-view" style="display: none;">
-          <div class="section-header">
-            <div>
-              <h2 class="section-title">Mapa de Mesas &amp; Comandas do Salão</h2>
-              <p style="color: var(--text-muted); font-size: 14px; margin-top: 4px;">
-                Acompanhe em tempo real o status de cada mesa (Livre ou Ocupada com comanda ativa).
-              </p>
-            </div>
-            <button type="button" class="btn btn-primary btn-sm" onclick="openAddOrderForTable('Mesa 01')">
-              <i class="fa-solid fa-plus" aria-hidden="true"></i>
-              <span>Abrir Comanda</span>
-            </button>
-          </div>
-
-          <div id="tables-grid-container" class="tables-grid">
-            <!-- Renderizado dinamicamente via JavaScript -->
-          </div>
-        </div>
-
-        <!-- ===================================================================
-             TELA 3: HISTÓRICO DE VENDAS & COMANDAS ENCERRADAS
-             =================================================================== -->
-        <div id="view-historico" class="admin-tab-view" style="display: none;">
+        <div id="view-historico" class="admin-tab-view" style="margin-top: 40px;">
           <div class="section-header">
             <div>
               <h2 class="section-title">Histórico de Comandas Encerradas</h2>
@@ -304,11 +510,27 @@
                   <th>Itens Consumidos</th>
                   <th>Total</th>
                   <th>Pagamento</th>
-                  <th style="text-align: right;">Ações</th>
                 </tr>
               </thead>
               <tbody id="history-table-body">
-                <!-- Renderizado dinamicamente via JavaScript -->
+                <tr>
+                  <td><strong style="color: var(--neon-cyan);">#1035</strong></td>
+                  <td>18:50</td>
+                  <td><span class="status-tag tag-table">Mesa 06</span></td>
+                  <td><strong>Renata Castro</strong></td>
+                  <td>2x Smash Burger Duplo, 2x Coca-Cola 350ml</td>
+                  <td><strong style="color: #FFF;">R$ 73,80</strong></td>
+                  <td><span style="color: var(--neon-green);">Pago no Cartão de Crédito</span></td>
+                </tr>
+                <tr>
+                  <td><strong style="color: var(--neon-cyan);">#1034</strong></td>
+                  <td>18:30</td>
+                  <td><span class="status-tag tag-counter">Balcão 01</span></td>
+                  <td><strong>Guilherme Santos</strong></td>
+                  <td>1x Combo Duplo Clássico</td>
+                  <td><strong style="color: #FFF;">R$ 42,90</strong></td>
+                  <td><span style="color: var(--neon-green);">Pago no PIX</span></td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -319,198 +541,9 @@
 
   </div>
 
-  <!-- ===================================================================
-       MODAL: ADICIONAR NOVO PEDIDO (JAVASCRIPT)
-       =================================================================== -->
-  <div id="modal-add-order" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-add-title">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 id="modal-add-title" class="modal-title">
-          <i class="fa-solid fa-plus-circle" style="color: #FFAA16;" aria-hidden="true"></i>
-          <span>Adicionar Novo Pedido no Salão</span>
-        </h3>
-        <button type="button" class="btn-close-modal" data-close-modal aria-label="Fechar modal">
-          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-        </button>
-      </div>
-
-      <form id="form-add-order">
-        <div class="modal-body">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
-            <div class="form-group">
-              <label for="new-order-table" class="form-label">Mesa ou Balcão *</label>
-              <input type="text" id="new-order-table" class="form-input" placeholder="Ex: Mesa 05" required>
-            </div>
-
-            <div class="form-group">
-              <label for="new-order-customer" class="form-label">Nome do Cliente *</label>
-              <input type="text" id="new-order-customer" class="form-input" placeholder="Ex: João Silva" required>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Selecione os Itens do Pedido *</label>
-            <div class="order-products-selector">
-
-              <div class="product-select-row">
-                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; flex: 1;">
-                  <input type="checkbox" class="product-checkbox-item" value="classic" data-name="Cheeseburger Clássico" data-price="24.90">
-                  <span class="product-select-name">Cheeseburger Clássico</span>
-                  <span class="product-select-price">R$ 24,90</span>
-                </label>
-                <div style="display: flex; align-items: center; gap: 6px;">
-                  <label for="qty-classic" style="font-size: 11px; color: var(--text-muted);">Qtd:</label>
-                  <input type="number" id="qty-classic" value="1" min="1" max="20" style="width: 50px; background: #080B0E; border: 1px solid #29323A; color: #FFF; padding: 4px 6px; border-radius: 4px; text-align: center;">
-                </div>
-              </div>
-
-              <div class="product-select-row">
-                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; flex: 1;">
-                  <input type="checkbox" class="product-checkbox-item" value="bacon" data-name="Bacon Burger" data-price="27.90">
-                  <span class="product-select-name">Bacon Burger</span>
-                  <span class="product-select-price">R$ 27,90</span>
-                </label>
-                <div style="display: flex; align-items: center; gap: 6px;">
-                  <label for="qty-bacon" style="font-size: 11px; color: var(--text-muted);">Qtd:</label>
-                  <input type="number" id="qty-bacon" value="1" min="1" max="20" style="width: 50px; background: #080B0E; border: 1px solid #29323A; color: #FFF; padding: 4px 6px; border-radius: 4px; text-align: center;">
-                </div>
-              </div>
-
-              <div class="product-select-row">
-                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; flex: 1;">
-                  <input type="checkbox" class="product-checkbox-item" value="combo" data-name="Combo Duplo Clássico" data-price="42.90">
-                  <span class="product-select-name">Combo Duplo Clássico</span>
-                  <span class="product-select-price">R$ 42,90</span>
-                </label>
-                <div style="display: flex; align-items: center; gap: 6px;">
-                  <label for="qty-combo" style="font-size: 11px; color: var(--text-muted);">Qtd:</label>
-                  <input type="number" id="qty-combo" value="1" min="1" max="20" style="width: 50px; background: #080B0E; border: 1px solid #29323A; color: #FFF; padding: 4px 6px; border-radius: 4px; text-align: center;">
-                </div>
-              </div>
-
-              <div class="product-select-row">
-                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; flex: 1;">
-                  <input type="checkbox" class="product-checkbox-item" value="smash" data-name="Smash Burger Duplo" data-price="29.90">
-                  <span class="product-select-name">Smash Burger Duplo</span>
-                  <span class="product-select-price">R$ 29,90</span>
-                </label>
-                <div style="display: flex; align-items: center; gap: 6px;">
-                  <label for="qty-smash" style="font-size: 11px; color: var(--text-muted);">Qtd:</label>
-                  <input type="number" id="qty-smash" value="1" min="1" max="20" style="width: 50px; background: #080B0E; border: 1px solid #29323A; color: #FFF; padding: 4px 6px; border-radius: 4px; text-align: center;">
-                </div>
-              </div>
-
-              <div class="product-select-row">
-                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; flex: 1;">
-                  <input type="checkbox" class="product-checkbox-item" value="fries" data-name="Batata Frita Crocante" data-price="12.90">
-                  <span class="product-select-name">Batata Frita Crocante</span>
-                  <span class="product-select-price">R$ 12,90</span>
-                </label>
-                <div style="display: flex; align-items: center; gap: 6px;">
-                  <label for="qty-fries" style="font-size: 11px; color: var(--text-muted);">Qtd:</label>
-                  <input type="number" id="qty-fries" value="1" min="1" max="20" style="width: 50px; background: #080B0E; border: 1px solid #29323A; color: #FFF; padding: 4px 6px; border-radius: 4px; text-align: center;">
-                </div>
-              </div>
-
-              <div class="product-select-row">
-                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; flex: 1;">
-                  <input type="checkbox" class="product-checkbox-item" value="coke" data-name="Coca-Cola 350ml" data-price="7.00">
-                  <span class="product-select-name">Coca-Cola 350ml</span>
-                  <span class="product-select-price">R$ 7,00</span>
-                </label>
-                <div style="display: flex; align-items: center; gap: 6px;">
-                  <label for="qty-coke" style="font-size: 11px; color: var(--text-muted);">Qtd:</label>
-                  <input type="number" id="qty-coke" value="1" min="1" max="20" style="width: 50px; background: #080B0E; border: 1px solid #29323A; color: #FFF; padding: 4px 6px; border-radius: 4px; text-align: center;">
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="new-order-payment" class="form-label">Forma de Pagamento (Ao fechar conta)</label>
-            <select id="new-order-payment" class="form-select">
-              <option value="Cartão Crédito">Cartão de Crédito</option>
-              <option value="Cartão Débito">Cartão de Débito</option>
-              <option value="PIX">PIX</option>
-              <option value="Dinheiro">Dinheiro</option>
-            </select>
-          </div>
-
-          <div class="form-group" style="margin-bottom: 0;">
-            <label for="new-order-notes" class="form-label">Observações da Cozinha (Opcional)</label>
-            <textarea id="new-order-notes" class="form-textarea" rows="2" placeholder="Ex: Carne bem passada, sem picles..."></textarea>
-          </div>
-        </div>
-
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-close-modal>Cancelar</button>
-          <button type="submit" class="btn btn-primary">
-            <i class="fa-solid fa-check" aria-hidden="true"></i>
-            <span>Adicionar Pedido</span>
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- ===================================================================
-       MODAL: CONFIRMAÇÃO DE EXCLUSÃO (JAVASCRIPT)
-       =================================================================== -->
-  <div id="modal-delete-order" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-delete-title">
-    <div class="modal-content" style="max-width: 440px;">
-      <div class="modal-header">
-        <h3 id="modal-delete-title" class="modal-title" style="color: #F87171;">
-          <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
-          <span>Excluir Pedido</span>
-        </h3>
-        <button type="button" class="btn-close-modal" data-close-modal aria-label="Fechar modal">
-          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-        </button>
-      </div>
-
-      <div class="modal-body">
-        <p id="delete-modal-msg" style="color: var(--text-muted); font-size: 14.5px; line-height: 1.5;">
-          Tem certeza de que deseja excluir este pedido do sistema?
-        </p>
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-close-modal>Cancelar</button>
-        <button type="button" id="btn-confirm-delete" class="btn" style="background-color: #EF4444; color: #FFF;">
-          <i class="fa-solid fa-trash-can" aria-hidden="true"></i>
-          <span>Sim, Excluir</span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ===================================================================
-       MODAL: DETALHES DA COMANDA (JAVASCRIPT)
-       =================================================================== -->
-  <div id="modal-view-details" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-details-title">
-    <div class="modal-content" style="max-width: 500px;">
-      <div class="modal-header">
-        <h3 id="modal-details-title" class="modal-title">
-          <i class="fa-solid fa-receipt" style="color: #FFAA16;" aria-hidden="true"></i>
-          <span>Comanda do Salão</span>
-        </h3>
-        <button type="button" class="btn-close-modal" data-close-modal aria-label="Fechar modal">
-          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-        </button>
-      </div>
-
-      <div class="modal-body" id="view-details-content">
-        <!-- Preenchido dinamicamente via JS -->
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary btn-block" data-close-modal>Fechar Comanda</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Script da Central Administrativa -->
+  <!-- Espaço reservado para implementação JavaScript pelos membros da equipe -->
+  <!-- Primeiro as ações compartilhadas; depois o código específico desta tela. -->
+  <script src="assets/js/comum.js"></script>
   <script src="assets/js/admin.js"></script>
 
 </body>

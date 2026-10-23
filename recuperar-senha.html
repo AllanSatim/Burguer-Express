@@ -3,20 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recuperar Senha — Burguer Express</title>
-  <meta name="description" content="Recupere o acesso à sua conta na Burguer Express através do envio de instruções para seu e-mail cadastrado.">
-  <link rel="stylesheet" href="assets/css/global.css">
-  <link rel="stylesheet" href="assets/css/recuperar-senha.css">
+  <title>Recuperar Senha — Pixel Burguer</title>
+  <meta name="description" content="Recupere o acesso à sua conta Pixel Burguer através do envio de instruções para seu e-mail cadastrado.">
+  <!-- CSS base mantém o layout; o tema abaixo personaliza cores e componentes. -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/tema-gamer.css">
 </head>
 <body>
+  <!-- Acessibilidade: permite pular a navegação usando a tecla Tab. -->
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
 
-  <main class="auth-wrapper">
+  <!-- Recuperação de acesso: recebe o e-mail associado à conta. -->
+  <main class="auth-wrapper" id="conteudo-principal">
     <div class="auth-card-recovery">
 
       <!-- CABEÇALHO COM LOGO -->
       <header class="auth-header">
         <a href="index.html" class="auth-logo-link" title="Voltar para a página inicial">
-          <img src="assets/images/logo.svg" alt="Burguer Express Logo" class="auth-logo-img">
+          <img src="assets/images/LogoPixelBurguer1.png" alt="Pixel Burguer" class="auth-logo-img">
         </a>
         <div class="auth-icon-circle" aria-hidden="true">
           <i class="fa-solid fa-key"></i>
@@ -35,7 +39,7 @@
       </div>
 
       <!-- FORMULÁRIO DE RECUPERAÇÃO -->
-      <form action="#" method="post" class="auth-form" novalidate onsubmit="return false;">
+      <form action="#" method="post" class="auth-form">
 
         <!-- Campo E-mail -->
         <div class="form-group">
@@ -80,7 +84,8 @@
     </div>
   </main>
 
+  <!-- Primeiro as ações compartilhadas; depois o código específico desta tela. -->
+  <script src="assets/js/comum.js"></script>
   <script src="assets/js/recuperar-senha.js"></script>
 </body>
 </html>
-

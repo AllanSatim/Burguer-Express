@@ -1,0 +1,390 @@
+/* ============================================================================
+   PIXEL BURGUER — TEMA ARCADE & GOURMET / 2026
+   ============================================================================
+   OBJETIVO: visual inspirado em jogos, mas sem excesso de neon ou animação.
+   COMO FUNCIONA: esta folha é carregada DEPOIS de style.css. Por isso, as
+   regras a seguir personalizam a estrutura das páginas existentes sem destruir
+   as classes e componentes do projeto original.
+
+   MAPA DE CORES:
+   Grafite:    #10121B | plano de fundo, confortável em uso prolongado.
+   Carbono:    #1A1E2B | cards e superfícies.
+   Creme:      #F5F1E9 | títulos e textos importantes.
+   Cheddar:    #E6AE70 | ação principal e detalhes relacionados a comida.
+   Turquesa:   #80B6B6 | pequenos sinais gamer e foco do teclado.
+   Lilás:      #9890B7 | detalhes pontuais, nunca como fundo dominante.
+   ============================================================================ */
+
+/* 01 — Tokens: mude estes valores para alterar a identidade do site inteiro. */
+:root {
+  --bg-main: #10121B;
+  --bg-sidebar: #0B0D15;
+  --bg-card: #1A1E2B;
+  --bg-card-hover: #222837;
+  --bg-input: #131823;
+  --primary: #E6AE70;
+  --primary-hover: #F4C68B;
+  --primary-light: rgba(230, 174, 112, .13);
+  --primary-glow: rgba(230, 174, 112, .18);
+  --neon-cyan: #80B6B6;
+  --neon-cyan-hover: #A1CFCD;
+  --neon-cyan-glow: rgba(128,182,182,.2);
+  --neon-cyan-light: rgba(128,182,182,.11);
+  --neon-purple: #9890B7;
+  --neon-purple-hover: #B1A8CA;
+  --neon-purple-glow: rgba(152,144,183,.16);
+  --neon-purple-light: rgba(152,144,183,.09);
+  --neon-green: #9EBA99;
+  --neon-green-glow: rgba(158,186,153,.15);
+  --neon-green-light: rgba(158,186,153,.1);
+  --neon-amber: #E6AE70;
+  --neon-amber-glow: rgba(230,174,112,.17);
+  --neon-red: #D7827C;
+  --neon-red-glow: rgba(215,130,124,.16);
+  --text-main: #F5F1E9;
+  --text-muted: #B3B6C4;
+  --text-dim: #9298A7;
+  --text-dark: #151922;
+  --border: rgba(183,193,218,.13);
+  --border-light: rgba(183,193,218,.23);
+  --border-glow-cyan: rgba(128,182,182,.23);
+  --border-glow-purple: rgba(152,144,183,.20);
+  --success: #9EBA99;
+  --success-bg: rgba(158,186,153,.12);
+  --warning: #E6AE70;
+  --warning-bg: rgba(230,174,112,.11);
+  --danger: #D7827C;
+  --danger-bg: rgba(215,130,124,.12);
+  --info: #80B6B6;
+  --info-bg: rgba(128,182,182,.12);
+  --font-sans: 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif;
+  --font-display: 'Rajdhani', 'Trebuchet MS', 'Arial Narrow', sans-serif;
+  --radius-sm: 9px;
+  --radius-md: 13px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --shadow-card: 0 14px 45px rgba(0,0,0,.23);
+  --shadow-glow: 0 0 24px rgba(128,182,182,.1);
+  --shadow-input: 0 0 0 3px rgba(128,182,182,.23);
+}
+
+/* 02 — Base: luz discreta e uma grade arcade quase imperceptível. */
+body,
+.app-layout,
+.main-content {
+  background-color: var(--bg-main);
+}
+body {
+  background-image:
+    radial-gradient(ellipse at 90% 0%, rgba(128,182,182,.073), transparent 40%),
+    radial-gradient(ellipse at 10% 95%, rgba(230,174,112,.048), transparent 46%),
+    linear-gradient(rgba(229,235,248,.012) 1px, transparent 1px),
+    linear-gradient(90deg,rgba(229,235,248,.012) 1px,transparent 1px);
+  background-size: auto, auto, 52px 52px, 52px 52px;
+}
+:where(button, a, input, select, textarea):focus-visible {
+  outline: 2px solid var(--neon-cyan);
+  outline-offset: 3px;
+}
+::selection { background: rgba(128,182,182,.33); color: #fff; }
+::-webkit-scrollbar-track { background: var(--bg-sidebar); }
+::-webkit-scrollbar-thumb { background: #384151; }
+::-webkit-scrollbar-thumb:hover { background: var(--neon-cyan); box-shadow: none; }
+
+/* 03 — Layout: menu lateral com personalidade arcade, sem poluição visual. */
+.sidebar {
+  background: linear-gradient(170deg, #10131E 0%, #0A0C14 82%);
+  border-right-color: rgba(230,174,112,.13);
+  padding: 30px 17px 24px;
+}
+.sidebar-brand { justify-content: center; width: 100%; padding: 0 0 24px; }
+.sidebar-brand .logo-img { width: 132px; max-height: 132px; object-fit: contain; }
+.sidebar-nav { gap: 7px; }
+.nav-link {
+  color: #AEB4C1;
+  border: 1px solid transparent;
+  border-left: 3px solid transparent;
+  border-radius: 12px;
+  font-weight: 650;
+  letter-spacing: .05px;
+}
+.nav-link:hover { color: var(--text-main); background: rgba(128,182,182,.07); border-color: rgba(128,182,182,.1); }
+.nav-link:hover i { color: var(--neon-cyan); }
+.nav-link.active {
+  border-color: rgba(230,174,112,.18);
+  border-left-color: var(--primary);
+  color: var(--text-main);
+  background: linear-gradient(90deg,rgba(230,174,112,.14),rgba(230,174,112,.025));
+}
+.nav-link.active i { color: var(--primary); }
+.nav-link-admin,
+.nav-link-admin:hover { border: 1px dashed rgba(152,144,183,.28); background: rgba(152,144,183,.065); color: #C4BFDA; }
+.nav-link-admin i,
+.nav-link-admin .nav-badge-pill { color: #B3A9D0; }
+.nav-badge-pill { background: rgba(152,144,183,.15); }
+.sidebar-footer { gap: 12px; }
+.sidebar-footer .footer-icon { width: 42px; height: 42px; flex: 0 0 42px; object-fit: contain; }
+.sidebar-footer .accent-line { background: linear-gradient(90deg,var(--primary),var(--neon-cyan)); width: 62px; height: 3px; }
+
+/* 04 — Cabeçalho: superfície translúcida e botões de fácil localização. */
+.top-header {
+  background: rgba(15,18,27,.94);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(16px);
+  min-height: 76px;
+}
+.search-bar input,.cardapio-search-box input,.admin-search-input {
+  background: #171D29;
+  border-color: var(--border);
+}
+.search-bar input:focus,.cardapio-search-box input:focus,.form-input:focus,.form-textarea:focus,.admin-search-input:focus {
+  border-color: var(--neon-cyan);
+  box-shadow: var(--shadow-input);
+}
+.header-icon-btn { border-color: var(--border); background: #1B202C; }
+.header-icon-btn:hover { background: #2A303E; border-color: var(--primary); color: var(--primary); }
+.badge-count { background: var(--primary); color: #1C1820; box-shadow: none; }
+.page-container { max-width: 1740px; width: 100%; margin-inline: auto; }
+
+/* 05 — HERO: cenário de jogo em detalhes, hambúrguer como protagonista. */
+.hero-banner {
+  min-height: 280px;
+  background:
+    radial-gradient(circle at 64% 32%,rgba(230,174,112,.09),transparent 35%),
+    linear-gradient(120deg,#202332 0%,#1B202D 55%,#26222D 100%);
+  border: 1px solid rgba(230,174,112,.2);
+  box-shadow: 0 25px 60px rgba(0,0,0,.21);
+  isolation: isolate;
+}
+.hero-banner::after {
+  content: '01 / PLAYER ONE';
+  position: absolute;
+  top: 22px;
+  right: 24px;
+  z-index: 5;
+  font: 700 11px/1 var(--font-display);
+  letter-spacing: 2px;
+  color: #EAD8BC;
+  background: rgba(15,18,27,.78);
+  border: 1px solid rgba(230,174,112,.23);
+  padding: 9px 13px;
+  border-radius: 7px;
+}
+.hero-content { flex: 0 0 53%; max-width: 760px; padding: 18px 20px 20px 42px; }
+.hero-subtitle { color: #E7BC88; font-weight: 800; letter-spacing: 1.9px; font-size: 11px; }
+.hero-accent-line { background: var(--primary); height: 3px; width: 27px; }
+.hero-title { font-size: clamp(2.4rem, 3.7vw, 4.2rem); letter-spacing: -.8px; line-height: 1.02; font-weight: 800; margin: 12px 0; }
+.hero-title .highlight { color: #E6AE70; max-width: 590px; }
+.hero-text { font-size: 15px; line-height: 1.75; max-width: 500px; color: #BBC0CC; margin-bottom: 18px; }
+.hero-image-wrapper { width: 47%; flex: 1 1 47%; align-self: stretch; height: auto; min-height: 280px; overflow: hidden; }
+.hero-img { object-fit: cover; object-position: center; filter: saturate(.91); }
+.hero-image-wrapper::before { width: 105px; background: linear-gradient(90deg, #1D2230 0%,transparent); }
+.hero-image-wrapper::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg,rgba(16,18,27,.1),transparent 38%); pointer-events: none; }
+
+/* 06 — Botões: cheddar nas ações comerciais e turquesa nos feedbacks de jogo. */
+.btn-primary,.btn-gamer-cyan,.hero-btn {
+  background: var(--primary);
+  color: #171923;
+  border: 1px solid rgba(255,220,171,.48);
+  box-shadow: 0 5px 18px rgba(230,174,112,.12);
+  font-weight: 800;
+}
+.btn-primary:hover,.btn-gamer-cyan:hover,.hero-btn:hover {
+  background: var(--primary-hover);
+  color: #141820;
+  border-color: #F8D5AB;
+  box-shadow: 0 6px 24px rgba(230,174,112,.19);
+  transform: translateY(-2px);
+}
+.btn-outline,.btn-secondary { border-color: rgba(128,182,182,.36); color: #B6D5D5; }
+.btn-outline:hover,.btn-secondary:hover { border-color: var(--neon-cyan); background: rgba(128,182,182,.1); color: #EDF9F7; }
+
+/* 07 — Cards: fundos neutros, uma borda iluminada apenas ao passar o mouse. */
+.section-title,.category-section-title { font-weight: 800; letter-spacing: -.15px; }
+.section-title::before {
+  content: ''; display: inline-block; vertical-align: middle; width: 5px; height: 23px;
+  border-radius: 4px; background: var(--primary); margin-right: 12px;
+}
+.section-link { color: var(--neon-cyan); }
+.products-grid,.cardapio-grid { gap: 19px; }
+.product-card {
+  background: #1B202C;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 8px 22px rgba(0,0,0,.09);
+  overflow: hidden;
+}
+.product-card:hover { border-color: rgba(230,174,112,.34); transform: translateY(-4px); box-shadow: 0 22px 32px rgba(0,0,0,.16); }
+.product-img-wrapper { background: #211E27; position: relative; overflow: hidden; }
+.products-grid .product-img-wrapper { height: 280px; }
+.cardapio-grid .product-img-wrapper { height: 310px; }
+.product-img { object-fit: cover; transform: scale(1); transition: transform .4s ease; }
+.product-card:hover .product-img { transform: scale(1.045); }
+.product-content { padding: 19px 19px 20px; }
+.product-title { color: var(--text-main); font-size: 17px; }
+.product-desc { color: var(--text-muted); line-height: 1.62; }
+.product-price { color: #F0BD81; font-weight: 800; letter-spacing: .2px; }
+.qty-selector { border: 1px solid var(--border); background: #121722; }
+.qty-btn:hover { background: rgba(128,182,182,.12); color: var(--neon-cyan); }
+.btn-add-product { border: 1px solid rgba(230,174,112,.34); color: #F1C18A; background: rgba(230,174,112,.10); }
+.btn-add-product:hover { background: var(--primary); color: #161B24; border-color: var(--primary); }
+.product-badge { box-shadow: 0 3px 12px rgba(0,0,0,.13); }
+.badge-popular,.badge-new { background: var(--primary); color: #201921; }
+.badge-available { background: #30443F; color: #BDDFD4; }
+
+/* 08 — Cardápio: navegação por categorias e barra de comanda. */
+.cardapio-header h1,.pedido-header h1,.contato-header h1,.admin-title-area h1 { color: var(--text-main); }
+.category-pill { background: #1A1F2C; border-color: var(--border); color: #C4C9D4; }
+.category-pill:hover,.category-pill.active { background: rgba(128,182,182,.12); border-color: rgba(128,182,182,.40); color: #DAF0F0; }
+.menu-category-section { scroll-margin-top: 110px; }
+.category-section-header i { color: var(--primary); }
+.cardapio-cart-bar {
+  background: rgba(23,30,41,.97); border-color: rgba(230,174,112,.36);
+  box-shadow: 0 20px 55px rgba(0,0,0,.4); backdrop-filter: blur(16px);
+}
+.cart-bar-badge { background: rgba(230,174,112,.12); color: var(--primary); }
+
+/* 09 — Banner inferior: destaque sem disputar atenção com os produtos. */
+.dining-banner {
+  background: linear-gradient(125deg,#222A33,#1B222D 64%,#202630);
+  border-color: rgba(128,182,182,.20); box-shadow: var(--shadow-card);
+}
+.dining-icon { background: rgba(128,182,182,.12); border-color: rgba(128,182,182,.25); color: var(--neon-cyan); }
+.dining-tag { color: var(--neon-cyan); }
+.dining-right-bg { opacity: .22; }
+
+/* 10 — Formulários: contraste, conforto e foco visível para teclado. */
+.auth-wrapper { background: radial-gradient(ellipse at 50% 0%,rgba(128,182,182,.085),transparent 55%); }
+.auth-card,.auth-card-signup,.auth-card-recovery,.checkout-card,.order-summary-card,.contato-info-card,.contato-form-card,.sobre-card,.pillar-card {
+  background: #1A1F2B; border: 1px solid var(--border); box-shadow: var(--shadow-card);
+}
+.auth-card,.auth-card-signup,.auth-card-recovery { border-top: 3px solid var(--primary); }
+.auth-logo-img { max-width: 155px; }
+.auth-title { color: var(--text-main); }
+.form-input,.form-textarea,.form-select { background: #121824; border: 1px solid var(--border); color: var(--text-main); }
+.form-label { color: #DCE0E8; }
+.form-input::placeholder,.form-textarea::placeholder { color: #8F97A6; }
+.payment-method-card { border-color: var(--border); background: #131923; }
+.payment-method-card.active,.payment-method-card:has(input:checked) { border-color: var(--primary); background: rgba(230,174,112,.095); }
+.order-summary-card { border-top: 3px solid var(--primary); }
+.summary-total-val { color: var(--primary); }
+.sobre-hero { background: linear-gradient(120deg,#212632,#1A1F2C); border: 1px solid rgba(230,174,112,.19); }
+.sobre-tag,.sobre-hero h1 span { color: var(--primary); }
+
+/* 11 — Admin: indicadores e colunas, diferenciados com cores de estado suaves. */
+.kpi-card,.kanban-column,.admin-filters-bar,.admin-user-profile { background: #1A1F2B; border-color: var(--border); }
+.kpi-card:hover { border-color: var(--border-light); }
+.kpi-recebidos .kpi-icon-box { background: rgba(128,182,182,.11); color: var(--neon-cyan); border-color: rgba(128,182,182,.27); }
+.kpi-preparo .kpi-icon-box { background: rgba(230,174,112,.10); color: var(--primary); border-color: rgba(230,174,112,.23); }
+.kpi-prontos .kpi-icon-box { background: rgba(158,186,153,.12); color: var(--success); border-color: rgba(158,186,153,.3); }
+.admin-tab-btn.active { background: var(--primary); color: #151A22; border-color: var(--primary); }
+.store-status-badge { background: rgba(158,186,153,.09); border-color: rgba(158,186,153,.29); }
+
+/* 12 — Novo feedback de carrinho: mensagem discreta criada via JavaScript. */
+.toast-pixel {
+  position: fixed; bottom: 25px; right: 24px; z-index: 9999;
+  display: flex; align-items: center; gap: 11px;
+  background: #26342F; color: #E7F4EA;
+  border: 1px solid rgba(158,186,153,.42); border-radius: 12px;
+  padding: 14px 19px; box-shadow: 0 18px 40px rgba(0,0,0,.4);
+  max-width: min(380px,calc(100vw - 30px)); font-size: 14px; font-weight: 650;
+}
+.cart-line { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 12px 0; border-bottom: 1px solid var(--border); }
+.cart-line:last-child { border-bottom: 0; }
+.cart-line-info { flex: 1; }
+.cart-line-info strong { display: block; color: var(--text-main); }
+.cart-line-info small { color: var(--text-muted); }
+.cart-line-actions { display: flex; align-items: center; gap: 10px; }
+.cart-line-actions button { background: rgba(128,182,182,.11); border: 1px solid rgba(128,182,182,.23); color: var(--text-main); width: 32px; height: 32px; border-radius: 8px; cursor: pointer; }
+.cart-line-actions button:hover { border-color: var(--primary); }
+.status-note { display: block; margin-top: 10px; color: var(--text-muted); font-size: 12px; }
+.search-empty { padding: 30px; color: var(--text-muted); text-align: center; border: 1px dashed var(--border); border-radius: 12px; }
+.skip-link { position: fixed; z-index: 999; left: 15px; top: -100px; padding: 10px 16px; background: var(--primary); color: #12151D; border-radius: 7px; }
+.skip-link:focus { top: 12px; }
+
+/* 13 — Responsividade: o layout vira coluna no tablet e lista no celular. */
+@media (max-width: 1200px) {
+  .hero-content { padding: 36px 28px; }
+  .hero-title { font-size: clamp(2.3rem, 4.3vw, 3.8rem); }
+}
+@media (max-width: 991px) {
+  .sidebar { position: relative; width: 100%; height: auto; padding: 14px 18px; }
+  .sidebar-brand { justify-content: flex-start; padding: 0; }
+  .sidebar-brand .logo-img { width: 120px; max-height: 120px; }
+  .sidebar-nav { gap: 5px; padding-top: 10px; }
+  .nav-link.active { border-left: 1px solid rgba(230,174,112,.5); border-bottom: 2px solid var(--primary); }
+  .hero-banner { flex-direction: column; }
+  .hero-content { flex: 1 1 auto; max-width: none; width: 100%; padding: 42px 36px 28px; }
+  .hero-image-wrapper { width: 100%; min-height: 285px; max-height: 325px; }
+  .hero-image-wrapper::before { display: none; }
+  .hero-img { object-position: center 42%; }
+  .hero-banner::after { top: auto; bottom: 14px; }
+  .dining-right-bg { opacity: .12; }
+}
+@media (max-width: 576px) {
+  .top-header { min-height: 58px; padding: 0 14px; }
+  .sidebar { padding: 12px 14px; }
+  .sidebar-brand .logo-img { width: 105px; max-height: 105px; }
+  .page-container { padding: 20px 15px 40px; }
+  .hero-content { padding: 34px 22px 24px; }
+  .hero-title { font-size: clamp(2.15rem,10.8vw,3.3rem); margin: 14px 0; }
+  .hero-text { font-size: 14px; line-height: 1.6; }
+  .hero-image-wrapper { min-height: 210px; max-height: 230px; }
+  .hero-banner::after { right: 12px; bottom: 12px; font-size: 9px; }
+  .products-grid,.cardapio-grid { gap: 17px; }
+  .products-grid .product-img-wrapper { height: 240px; }
+  .cardapio-grid .product-img-wrapper { height: 300px; }
+  .product-content { padding: 17px; }
+  .section-title { font-size: 22px; }
+  .dining-banner { margin-top: 34px; }
+  .toast-pixel { right: 15px; bottom: 15px; }
+}
+
+/* 14 — Acessibilidade: evita movimento se o navegador solicitar redução. */
+@media (prefers-reduced-motion: reduce) {
+  *,*::before,*::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
+
+/* 15 — Ícones de segurança offline: símbolos simples como alternativa ao
+   Font Awesome hospedado na internet. Assim os principais controles continuam
+   identificáveis mesmo quando o usuário abre os arquivos sem conexão. */
+.nav-link i::before,.header-icon-btn i::before,.search-bar i::before,
+.cardapio-search-box i::before,.dining-icon i::before { font-family: 'Segoe UI Symbol', 'Arial', sans-serif !important; font-style: normal; font-weight: 800; }
+.fa-house::before { content: '⌂' !important; }
+.fa-burger::before { content: '☰' !important; }
+.fa-receipt::before { content: '▤' !important; }
+.fa-circle-info::before { content: 'ⓘ' !important; }
+.fa-envelope::before { content: '✉' !important; }
+.fa-shield-halved::before { content: '⛨' !important; }
+.fa-cart-shopping::before,.fa-basket-shopping::before { content: '▣' !important; }
+.fa-user::before { content: '♙' !important; }
+.fa-magnifying-glass::before { content: '⌕' !important; }
+.fa-gamepad::before { content: '✣' !important; }
+.fa-arrow-right::before { content: '→' !important; }
+.fa-arrow-left::before { content: '←' !important; }
+.fa-plus::before { content: '+' !important; }
+.fa-clock-rotate-left::before { content: '↶' !important; }
+.fa-bell-concierge::before { content: '✦' !important; }
+.fa-fire::before,.fa-fire-flame-curved::before { content: '♨' !important; }
+.fa-box-archive::before { content: '▥' !important; }
+.fa-bowl-food::before { content: '◉' !important; }
+.fa-ice-cream::before { content: '♢' !important; }
+.fa-wine-bottle::before { content: '♧' !important; }
+.fa-location-dot::before { content: '⌖' !important; }
+.fa-phone::before { content: '☎' !important; }
+.fa-chair::before { content: '▥' !important; }
+.fa-wallet::before { content: '▱' !important; }
+.fa-paper-plane::before { content: '➤' !important; }
+.fa-lock::before,.fa-key::before { content: '⚿' !important; }
+.fa-circle-check::before { content: '✓' !important; }
+
+/* Força o atributo HTML hidden a ter prioridade sobre as classes antigas
+   que definem display:flex ou display:grid para cards e seções. */
+[hidden] { display: none !important; }
+
+/* 16 — Carrinho em telas muito estreitas: linha quebra sem cortar o preço. */
+@media (max-width: 576px) {
+  .cart-line { flex-wrap: wrap; }
+  .cart-line-info { flex-basis: 100%; }
+  .cart-line-actions { flex: 1 1 auto; }
+}

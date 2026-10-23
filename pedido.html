@@ -3,20 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu Pedido na Mesa — Burguer Express</title>
-  <meta name="description" content="Atendente virtual da Burguer Express. Marque o pedido da sua mesa, defina a forma de pagamento e receba quentinho no local.">
-  <link rel="stylesheet" href="assets/css/global.css">
-  <link rel="stylesheet" href="assets/css/pedido.css">
+  <title>Meu Pedido na Mesa — Pixel Burguer</title>
+  <meta name="description" content="Atendimento digital da Pixel Burguer. Monte seu pedido, defina a forma de pagamento e receba quentinho na mesa.">
+  <!-- CSS base mantém o layout; o tema abaixo personaliza cores e componentes. -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/tema-gamer.css">
 </head>
 <body>
+  <!-- Acessibilidade: permite pular a navegação usando a tecla Tab. -->
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
 
+  <!-- Checkout de mesa: coleta identificação e pagamento e apresenta o resumo do pedido. -->
   <div class="app-layout">
 
     <!-- BARRA LATERAL (SIDEBAR) -->
     <aside class="sidebar" aria-label="Menu Principal">
       <div>
-        <a href="index.html" class="sidebar-brand" title="Burguer Express - Início">
-          <img src="assets/images/logo.svg" alt="Burguer Express Logo" class="logo-img">
+        <a href="index.html" class="sidebar-brand" title="Pixel Burguer - Início">
+          <img src="assets/images/LogoPixelBurguer1.png" alt="Pixel Burguer" class="logo-img">
         </a>
 
         <nav class="sidebar-nav">
@@ -32,7 +36,7 @@
             <i class="fa-solid fa-receipt" aria-hidden="true"></i>
             <span>Meu Pedido</span>
           </a>
-          <a href="sobre.html" class="nav-link" title="Sobre a Burguer Express">
+          <a href="sobre.html" class="nav-link" title="Sobre a Pixel Burguer">
             <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
             <span>Sobre</span>
           </a>
@@ -51,7 +55,7 @@
 
       <!-- Rodapé da barra lateral -->
       <div class="sidebar-footer">
-        <img src="assets/images/burger-icon.svg" alt="" class="footer-icon" aria-hidden="true">
+        <img src="assets/images/LogoPixelBurguer1.png" alt="" class="footer-icon" aria-hidden="true">
         <p class="footer-text">Sabor, qualidade e aquele toque especial em cada mordida.</p>
         <div class="accent-line" aria-hidden="true"></div>
       </div>
@@ -79,14 +83,14 @@
       </header>
 
       <!-- CONTEÚDO PRINCIPAL DO PEDIDO -->
-      <main class="page-container">
+      <main class="page-container" id="conteudo-principal">
 
         <header class="pedido-header">
           <h1>Meu Pedido na Mesa</h1>
-          <p>Atendente virtual: marque os itens da sua comanda, indique a mesa e como você vai pagar ao pedir a conta.</p>
+          <p>Monte sua comanda, indique sua mesa e simule a finalização. Esta versão ainda não envia pedidos para a cozinha.</p>
         </header>
 
-        <form action="#" method="post" class="checkout-grid" onsubmit="return false;">
+        <form action="#" method="post" class="checkout-grid">
 
           <!-- COLUNA ESQUERDA: ITENS ZERADOS + IDENTIFICAÇÃO DA MESA + FORMA DE PAGAMENTO -->
           <div class="checkout-main-col">
@@ -262,7 +266,7 @@
               <div class="summary-buttons">
                 <button type="submit" class="btn btn-primary btn-block btn-lg">
                   <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-                  <span>Enviar Pedido à Cozinha</span>
+                  <span>Simular Pedido</span>
                 </button>
                 <a href="cardapio.html" class="btn btn-secondary btn-block">
                   <i class="fa-solid fa-plus" aria-hidden="true"></i>
@@ -279,6 +283,8 @@
 
   </div>
 
+  <!-- Primeiro as ações compartilhadas; depois o código específico desta tela. -->
+  <script src="assets/js/comum.js"></script>
   <script src="assets/js/pedido.js"></script>
 </body>
 </html>

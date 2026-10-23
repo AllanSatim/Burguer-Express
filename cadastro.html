@@ -3,20 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Criar Conta — Burguer Express</title>
-  <meta name="description" content="Cadastre-se na Burguer Express para acompanhar seus pedidos e aproveitar promoções exclusivas.">
-  <link rel="stylesheet" href="assets/css/global.css">
-  <link rel="stylesheet" href="assets/css/cadastro.css">
+  <title>Criar Conta — Pixel Burguer</title>
+  <meta name="description" content="Cadastre-se na Pixel Burguer para acompanhar seus pedidos e aproveitar novidades exclusivas.">
+  <!-- CSS base mantém o layout; o tema abaixo personaliza cores e componentes. -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/tema-gamer.css">
 </head>
 <body>
+  <!-- Acessibilidade: permite pular a navegação usando a tecla Tab. -->
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
 
-  <main class="auth-wrapper">
+  <!-- Cadastro: coleta dados de contato e credenciais para uma nova conta. -->
+  <main class="auth-wrapper" id="conteudo-principal">
     <div class="auth-card-signup">
 
       <!-- CABEÇALHO COM LOGO -->
       <header class="auth-header">
         <a href="index.html" class="auth-logo-link" title="Voltar para a página inicial">
-          <img src="assets/images/logo.svg" alt="Burguer Express Logo" class="auth-logo-img">
+          <img src="assets/images/LogoPixelBurguer1.png" alt="Pixel Burguer" class="auth-logo-img">
         </a>
         <h1 class="auth-title">Crie sua conta</h1>
         <p class="auth-subtitle">Preencha os dados abaixo para fazer seus pedidos rapidamente</p>
@@ -32,7 +36,7 @@
       </div>
 
       <!-- FORMULÁRIO DE CADASTRO -->
-      <form action="#" method="post" class="auth-form" novalidate onsubmit="return false;">
+      <form action="#" method="post" class="auth-form">
 
         <!-- Nome Completo -->
         <div class="form-group">
@@ -120,7 +124,7 @@
         <div class="form-terms">
           <input type="checkbox" id="terms-agree" name="terms" required>
           <label for="terms-agree">
-            Li e concordo com os <a href="#">Termos de Uso</a> e a <a href="#">Política de Privacidade</a> da Burguer Express.
+            Li e concordo com os <a href="#">Termos de Uso</a> e a <a href="#">Política de Privacidade</a> da Pixel Burguer.
           </label>
         </div>
 
@@ -149,7 +153,8 @@
     </div>
   </main>
 
+  <!-- Primeiro as ações compartilhadas; depois o código específico desta tela. -->
+  <script src="assets/js/comum.js"></script>
   <script src="assets/js/cadastro.js"></script>
 </body>
 </html>
-

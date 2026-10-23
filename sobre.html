@@ -3,20 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre Nós — Burguer Express</title>
-  <meta name="description" content="Conheça a história da Burguer Express, nossa paixão por hambúrgueres artesanais e o ambiente moderno da nossa lanchonete física.">
-  <link rel="stylesheet" href="assets/css/global.css">
-  <link rel="stylesheet" href="assets/css/sobre.css">
+  <title>Sobre Nós — Pixel Burguer</title>
+  <meta name="description" content="Conheça a Pixel Burguer, nossa paixão por hambúrgueres artesanais e o ambiente gamer na medida.">
+  <!-- CSS base mantém o layout; o tema abaixo personaliza cores e componentes. -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/tema-gamer.css">
 </head>
 <body>
+  <!-- Acessibilidade: permite pular a navegação usando a tecla Tab. -->
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
 
+  <!-- Sobre: apresenta a história, valores e proposta da Pixel Burguer. -->
   <div class="app-layout">
 
     <!-- BARRA LATERAL (SIDEBAR) -->
     <aside class="sidebar" aria-label="Menu Principal">
       <div>
-        <a href="index.html" class="sidebar-brand" title="Burguer Express - Início">
-          <img src="assets/images/logo.svg" alt="Burguer Express Logo" class="logo-img">
+        <a href="index.html" class="sidebar-brand" title="Pixel Burguer - Início">
+          <img src="assets/images/LogoPixelBurguer1.png" alt="Pixel Burguer" class="logo-img">
         </a>
 
         <nav class="sidebar-nav">
@@ -32,7 +36,7 @@
             <i class="fa-solid fa-receipt" aria-hidden="true"></i>
             <span>Meu Pedido</span>
           </a>
-          <a href="sobre.html" class="nav-link active" title="Sobre a Burguer Express">
+          <a href="sobre.html" class="nav-link active" title="Sobre a Pixel Burguer">
             <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
             <span>Sobre</span>
           </a>
@@ -51,7 +55,7 @@
 
       <!-- Rodapé da barra lateral -->
       <div class="sidebar-footer">
-        <img src="assets/images/burger-icon.svg" alt="" class="footer-icon" aria-hidden="true">
+        <img src="assets/images/LogoPixelBurguer1.png" alt="" class="footer-icon" aria-hidden="true">
         <p class="footer-text">Sabor, qualidade e aquele toque especial em cada mordida.</p>
         <div class="accent-line" aria-hidden="true"></div>
       </div>
@@ -79,14 +83,14 @@
       </header>
 
       <!-- CONTEÚDO PRINCIPAL: SOBRE -->
-      <main class="page-container">
+      <main class="page-container" id="conteudo-principal">
 
         <!-- DESTAQUE PRINCIPAL -->
         <section class="sobre-hero">
           <span class="sobre-tag">Nossa Identidade &amp; Propósito</span>
           <h1>A paixão pelo hambúrguer artesanal feito para saborear <span>no salão</span></h1>
           <p>
-            A Burguer Express nasceu com o compromisso de unir a autenticidade do hambúrguer artesanal na brasa com a praticidade de uma experiência física moderna, onde você senta à mesa e pede no seu próprio tempo.
+            A Pixel Burguer nasceu com o compromisso de unir a autenticidade do hambúrguer artesanal na brasa com a praticidade de uma experiência moderna e um toque de cultura gamer.
           </p>
         </section>
 
@@ -160,7 +164,7 @@
         <div class="sobre-cta-card">
           <div class="sobre-cta-text">
             <h3>Preparado para saborear o verdadeiro hambúrguer?</h3>
-            <p>Explore nosso cardápio completo e monte seu pedido no salão da Burguer Express.</p>
+            <p>Explore nosso cardápio completo e monte seu pedido no salão da Pixel Burguer.</p>
           </div>
           <a href="cardapio.html" class="btn btn-primary">
             <span>Ver Cardápio</span>
@@ -173,7 +177,8 @@
 
   </div>
 
+  <!-- Primeiro as ações compartilhadas; depois o código específico desta tela. -->
+  <script src="assets/js/comum.js"></script>
   <script src="assets/js/sobre.js"></script>
 </body>
 </html>
-
