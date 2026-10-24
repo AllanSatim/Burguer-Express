@@ -6,8 +6,8 @@
   <title>Central de Comando da Cozinha — Pixel Burguer</title>
   <meta name="description" content="Painel de controle gamer e esteira de produção de pedidos da hamburgueria.">
   <!-- CSS base mantém o layout; o tema abaixo personaliza cores e componentes. -->
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/tema-gamer.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/tema-gamer.css">
 </head>
 <body>
   <!-- Acessibilidade: permite pular a navegação usando a tecla Tab. -->
@@ -29,12 +29,12 @@
     <!-- MENU LATERAL ADMINISTRATIVO -->
     <aside class="sidebar" aria-label="Navegação Administrativa">
       <div>
-        <a href="admin.html" class="sidebar-brand" title="Pixel Burguer - Painel Admin">
-          <img src="assets/images/LogoPixelBurguer1.png" alt="Pixel Burguer" class="logo-img">
+        <a href="/views/admin.html" class="sidebar-brand" title="Pixel Burguer - Painel Admin">
+          <img src="/assets/images/LogoPixelBurguer1.png" alt="Pixel Burguer" class="logo-img">
         </a>
 
         <nav class="sidebar-nav">
-          <a href="admin.html" class="nav-link active" title="Fila de Pedidos (Kanban)">
+          <a href="/views/admin.html" class="nav-link active" title="Fila de Pedidos (Kanban)">
             <i class="fa-solid fa-gamepad" aria-hidden="true" style="color: var(--neon-cyan);"></i>
             <span>Fila de Pedidos</span>
           </a>
@@ -42,15 +42,15 @@
             <i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i>
             <span>Histórico</span>
           </a>
-          <a href="cardapio.html" class="nav-link" title="Ver Cardápio Público">
+          <a href="/views/cardapio.html" class="nav-link" title="Ver Cardápio Público">
             <i class="fa-solid fa-utensils" aria-hidden="true"></i>
             <span>Cardápio</span>
           </a>
-          <a href="index.html" class="nav-link" title="Ir para a Visão do Cliente">
+          <a href="/views/index.html" class="nav-link" title="Ir para a Visão do Cliente">
             <i class="fa-solid fa-store" aria-hidden="true"></i>
             <span>Voltar ao Salão</span>
           </a>
-          <a href="login.html" class="nav-link" title="Sair da Conta de Administrador" style="margin-top: 16px; color: #FF2E63;">
+          <a href="/views/login.html" class="nav-link" title="Sair da Conta de Administrador" style="margin-top: 16px; color: #FF2E63;">
             <i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true" style="color: #FF2E63;"></i>
             <span>Sair do Admin</span>
           </a>
@@ -59,7 +59,7 @@
 
       <!-- Rodapé do menu administrativo -->
       <div class="sidebar-footer">
-        <img src="assets/images/LogoPixelBurguer1.png" alt="" class="footer-icon" aria-hidden="true">
+        <img src="/assets/images/LogoPixelBurguer1.png" alt="" class="footer-icon" aria-hidden="true">
         <p class="footer-text">Central de Produção &amp; Pedidos Gamer</p>
         <div class="accent-line" aria-hidden="true"></div>
       </div>
@@ -100,7 +100,7 @@
 
         <!-- SUB-NAV DE TELAS (ABAS RÁPIDAS) -->
         <nav class="admin-view-tabs" aria-label="Seções Administrativas">
-          <a href="admin.html" class="admin-tab-btn active">
+          <a href="/views/admin.html" class="admin-tab-btn active">
             <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
             <span>Fila de Pedidos (Kanban)</span>
           </a>
@@ -543,8 +543,8 @@
 
   <!-- Espaço reservado para implementação JavaScript pelos membros da equipe -->
   <!-- Primeiro as ações compartilhadas; depois o código específico desta tela. -->
-  <script src="assets/js/comum.js"></script>
-  <script src="assets/js/admin.js"></script>
+  <script src="/assets/js/comum.js"></script>
+  <script src="/assets/js/admin.js"></script>
 
 </body>
 </html>

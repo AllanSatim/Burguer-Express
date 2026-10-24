@@ -6,8 +6,8 @@
   <title>Cardápio — Pixel Burguer</title>
   <meta name="description" content="Confira o cardápio completo da Pixel Burguer: hambúrgueres artesanais, combos especiais, porções, bebidas e sobremesas.">
   <!-- CSS base mantém o layout; o tema abaixo personaliza cores e componentes. -->
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/tema-gamer.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/tema-gamer.css">
 </head>
 <body>
   <!-- Acessibilidade: permite pular a navegação usando a tecla Tab. -->
@@ -19,33 +19,33 @@
     <!-- BARRA LATERAL (SIDEBAR) -->
     <aside class="sidebar" aria-label="Menu Principal">
       <div>
-        <a href="index.html" class="sidebar-brand" title="Pixel Burguer - Início">
-          <img src="assets/images/LogoPixelBurguer1.png" alt="Pixel Burguer" class="logo-img">
+        <a href="/views/index.html" class="sidebar-brand" title="Pixel Burguer - Início">
+          <img src="/assets/images/LogoPixelBurguer1.png" alt="Pixel Burguer" class="logo-img">
         </a>
 
         <nav class="sidebar-nav">
-          <a href="index.html" class="nav-link" title="Página Inicial">
+          <a href="/views/index.html" class="nav-link" title="Página Inicial">
             <i class="fa-solid fa-house" aria-hidden="true"></i>
             <span>Início</span>
           </a>
-          <a href="cardapio.html" class="nav-link active" title="Cardápio Completo">
+          <a href="/views/cardapio.html" class="nav-link active" title="Cardápio Completo">
             <i class="fa-solid fa-burger" aria-hidden="true"></i>
             <span>Cardápio</span>
           </a>
-          <a href="pedido.html" class="nav-link" title="Meu Pedido na Mesa">
+          <a href="/views/pedido.html" class="nav-link" title="Meu Pedido na Mesa">
             <i class="fa-solid fa-receipt" aria-hidden="true"></i>
             <span>Meu Pedido</span>
           </a>
-          <a href="sobre.html" class="nav-link" title="Sobre a Pixel Burguer">
+          <a href="/views/sobre.html" class="nav-link" title="Sobre a Pixel Burguer">
             <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
             <span>Sobre</span>
           </a>
-          <a href="contato.html" class="nav-link" title="Fale Conosco">
+          <a href="/views/contato.html" class="nav-link" title="Fale Conosco">
             <i class="fa-solid fa-envelope" aria-hidden="true"></i>
             <span>Contato</span>
           </a>
           <!-- Link do Administrador inserido no Menu Principal -->
-          <a href="admin.html" class="nav-link nav-link-admin" title="Painel da Cozinha / Administração (Acesso liberado para testes)">
+          <a href="/views/admin.html" class="nav-link nav-link-admin" title="Painel da Cozinha / Administração (Acesso liberado para testes)">
             <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
             <span>Painel Admin</span>
             <span class="nav-badge-pill">Acesso</span>
@@ -55,7 +55,7 @@
 
       <!-- Rodapé da barra lateral -->
       <div class="sidebar-footer">
-        <img src="assets/images/LogoPixelBurguer1.png" alt="" class="footer-icon" aria-hidden="true">
+        <img src="/assets/images/LogoPixelBurguer1.png" alt="" class="footer-icon" aria-hidden="true">
         <p class="footer-text">Sabor, qualidade e aquele toque especial em cada mordida.</p>
         <div class="accent-line" aria-hidden="true"></div>
       </div>
@@ -72,11 +72,11 @@
         </div>
 
         <div class="header-actions">
-          <a href="pedido.html" class="header-icon-btn" title="Ver pedido da mesa" aria-label="Carrinho zerado">
+          <a href="/views/pedido.html" class="header-icon-btn" title="Ver pedido da mesa" aria-label="Carrinho zerado">
             <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
             <span class="badge-count">0</span>
           </a>
-          <a href="login.html" class="header-icon-btn" title="Minha Conta / Entrar" aria-label="Perfil do usuário">
+          <a href="/views/login.html" class="header-icon-btn" title="Minha Conta / Entrar" aria-label="Perfil do usuário">
             <i class="fa-regular fa-user" aria-hidden="true"></i>
           </a>
         </div>
@@ -143,7 +143,7 @@
             <article class="product-card" data-category="hamburgueres">
               <div class="product-img-wrapper">
                 <span class="product-badge badge-popular">Mais Vendido</span>
-                <img src="assets/images/burger-classic.jpg" alt="Cheeseburger Clássico" class="product-img" loading="lazy">
+                <img src="/assets/images/burger-classic.jpg" alt="Cheeseburger Clássico" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Cheeseburger Clássico</h3>
@@ -166,7 +166,7 @@
             <!-- Item 2: Bacon Burger -->
             <article class="product-card" data-category="hamburgueres">
               <div class="product-img-wrapper">
-                <img src="assets/images/burger-bacon.jpg" alt="Bacon Burger" class="product-img" loading="lazy">
+                <img src="/assets/images/burger-bacon.jpg" alt="Bacon Burger" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Bacon Burger</h3>
@@ -190,7 +190,7 @@
             <article class="product-card" data-category="hamburgueres">
               <div class="product-img-wrapper">
                 <span class="product-badge badge-new">Novo</span>
-                <img src="assets/images/burger-smash.jpg" alt="Smash Burger Duplo" class="product-img" loading="lazy">
+                <img src="/assets/images/burger-smash.jpg" alt="Smash Burger Duplo" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Smash Burger Duplo</h3>
@@ -214,7 +214,7 @@
             <article class="product-card" data-category="hamburgueres">
               <div class="product-img-wrapper">
                 <span class="product-badge badge-available">Especial do Chef</span>
-                <img src="assets/images/burger-truffle.jpg" alt="Trufado Artesanal" class="product-img" loading="lazy">
+                <img src="/assets/images/burger-truffle.jpg" alt="Trufado Artesanal" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Trufado Artesanal</h3>
@@ -238,7 +238,7 @@
             <article class="product-card" data-category="hamburgueres">
               <div class="product-img-wrapper">
                 <span class="product-badge badge-available">Especial do Chef</span>
-                <img src="assets/images/PixelSmash.jpg" alt="Pixel Smash" class="product-img" loading="lazy">
+                <img src="/assets/images/PixelSmash.jpg" alt="Pixel Smash" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Pixel Smash</h3>
@@ -262,7 +262,7 @@
             <article class="product-card" data-category="hamburgueres">
               <div class="product-img-wrapper">
                 <span class="product-badge badge-available">Especial do Chef</span>
-                <img src="assets/images/BossBacon.jpg" alt="Boss Bacon" class="product-img" loading="lazy">
+                <img src="/assets/images/BossBacon.jpg" alt="Boss Bacon" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Boss Bacon</h3>
@@ -286,7 +286,7 @@
             <article class="product-card" data-category="hamburgueres">
               <div class="product-img-wrapper">
                 <span class="product-badge badge-available">Especial do Chef</span>
-                <img src="assets/images/XPChicken.jpg" alt="XP Chicken" class="product-img" loading="lazy">
+                <img src="/assets/images/XPChicken.jpg" alt="XP Chicken" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">XP Chicken</h3>
@@ -310,7 +310,7 @@
             <article class="product-card" data-category="hamburgueres">
               <div class="product-img-wrapper">
                 <span class="product-badge badge-available">Especial do Chef</span>
-                <img src="assets/images/DoubleRespawn.jpg" alt="Double Respawn" class="product-img" loading="lazy">
+                <img src="/assets/images/DoubleRespawn.jpg" alt="Double Respawn" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Double Respawn</h3>
@@ -347,7 +347,7 @@
             <article class="product-card" data-category="combos">
               <div class="product-img-wrapper">
                 <span class="product-badge badge-popular">Mais Pedido</span>
-                <img src="assets/images/ComboPlayer1.jpg" alt="Combo Player 1" class="product-img" loading="lazy">
+                <img src="/assets/images/ComboPlayer1.jpg" alt="Combo Player 1" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Combo Player 1</h3>
@@ -371,7 +371,7 @@
             <article class="product-card" data-category="combos">
               <div class="product-img-wrapper">
                 <span class="product-badge badge-popular">Mais Pedido</span>
-                <img src="assets/images/burger-combo.jpg" alt="Combo Duplo Clássico" class="product-img" loading="lazy">
+                <img src="/assets/images/burger-combo.jpg" alt="Combo Duplo Clássico" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Combo Duplo Clássico</h3>
@@ -396,7 +396,7 @@
             <article class="product-card" data-category="combos">
               <div class="product-img-wrapper">
                 <span class="product-badge badge-popular">Mais Pedido</span>
-                <img src="assets/images/ComboCoOp.jpg" alt="Combo Co-op" class="product-img" loading="lazy">
+                <img src="/assets/images/ComboCoOp.jpg" alt="Combo Co-op" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Combo Co-op</h3>
@@ -419,7 +419,7 @@
             <!-- Item 6: Combo Bacon Lovers -->
             <article class="product-card" data-category="combos">
               <div class="product-img-wrapper">
-                <img src="assets/images/ComboBaconLovers.jpg" alt="Combo Bacon Lovers" class="product-img" loading="lazy">
+                <img src="/assets/images/ComboBaconLovers.jpg" alt="Combo Bacon Lovers" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Combo Bacon Lovers</h3>
@@ -455,7 +455,7 @@
             <!-- Item 7: Batata Frita Crocante -->
             <article class="product-card" data-category="acompanhamentos">
               <div class="product-img-wrapper">
-                <img src="assets/images/BatataFritaCrocante.jpg" alt="Batata Frita Crocante" class="product-img" loading="lazy">
+                <img src="/assets/images/BatataFritaCrocante.jpg" alt="Batata Frita Crocante" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Batata Frita Crocante</h3>
@@ -478,7 +478,7 @@
             <!-- Item 8: Onion Rings Especial -->
             <article class="product-card" data-category="acompanhamentos">
               <div class="product-img-wrapper">
-                <img src="assets/images/OnionRingsEspecial.jpg" alt="Onion Rings Especial" class="product-img" loading="lazy">
+                <img src="/assets/images/OnionRingsEspecial.jpg" alt="Onion Rings Especial" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Onion Rings Especial</h3>
@@ -501,7 +501,7 @@
             <!-- Item 9: Nuggets Artesanais -->
             <article class="product-card" data-category="acompanhamentos">
               <div class="product-img-wrapper">
-                <img src="assets/images/NuggetsArtesanais.jpg" alt="Nuggets Artesanais" class="product-img" loading="lazy">
+                <img src="/assets/images/NuggetsArtesanais.jpg" alt="Nuggets Artesanais" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Nuggets Artesanais (8 un)</h3>
@@ -524,7 +524,7 @@
             <!-- Item 10: Batata Cheddar & Bacon -->
             <article class="product-card" data-category="acompanhamentos">
               <div class="product-img-wrapper">
-                <img src="assets/images/BatataCheddarBacon.jpg" alt="Batata Cheddar & Bacon" class="product-img" loading="lazy">
+                <img src="/assets/images/BatataCheddarBacon.jpg" alt="Batata Cheddar & Bacon" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Batata Cheddar & Bacon</h3>
@@ -547,7 +547,7 @@
             <!-- Item 11: XP Fries — Batata Rústica -->
             <article class="product-card" data-category="acompanhamentos">
               <div class="product-img-wrapper">
-                <img src="assets/images/XPFriesBatataRustica.jpg" alt="XP Fries — Batata Rústica" class="product-img" loading="lazy">
+                <img src="/assets/images/XPFriesBatataRustica.jpg" alt="XP Fries — Batata Rústica" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">XP Fries — Batata Rústica</h3>
@@ -570,7 +570,7 @@
             <!-- Item 12: Chicken Bites Crocantes -->
             <article class="product-card" data-category="acompanhamentos">
               <div class="product-img-wrapper">
-                <img src="assets/images/ChickenBitesCrocantes.jpg" alt="Chicken Bites Crocantes" class="product-img" loading="lazy">
+                <img src="/assets/images/ChickenBitesCrocantes.jpg" alt="Chicken Bites Crocantes" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Chicken Bites Crocantes (8 un)</h3>
@@ -593,7 +593,7 @@
             <!-- Item 13: Cheese Balls -->
             <article class="product-card" data-category="acompanhamentos">
               <div class="product-img-wrapper">
-                <img src="assets/images/CheeseBallsEsferasQueijo.jpg" alt="Cheese Balls — Esferas de Queijo (8 un)" class="product-img" loading="lazy">
+                <img src="/assets/images/CheeseBallsEsferasQueijo.jpg" alt="Cheese Balls — Esferas de Queijo (8 un)" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Cheese Balls — Esferas de Queijo (8 un)</h3>
@@ -616,7 +616,7 @@
             <!-- Item 14: Boss Fries -->
             <article class="product-card" data-category="acompanhamentos">
               <div class="product-img-wrapper">
-                <img src="assets/images/BossFries.jpg" alt="Boss Fries — Batata Suprema" class="product-img" loading="lazy">
+                <img src="/assets/images/BossFries.jpg" alt="Boss Fries — Batata Suprema" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Boss Fries — Batata Suprema</h3>
@@ -652,7 +652,7 @@
             <!-- Item 10: Coca-Cola 350ml -->
             <article class="product-card" data-category="bebidas">
               <div class="product-img-wrapper">
-                <img src="assets/images/drinks.jpg" alt="Coca-Cola 350ml" class="product-img" loading="lazy">
+                <img src="/assets/images/drinks.jpg" alt="Coca-Cola 350ml" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Coca-Cola Lata 350ml</h3>
@@ -676,7 +676,7 @@
             <article class="product-card" data-category="bebidas">
               <div class="product-img-wrapper">
                 <span class="product-badge badge-popular">Favorito</span>
-                <img src="assets/images/Sprite.png" alt="Sprite" class="product-img" loading="lazy">
+                <img src="/assets/images/Sprite.png" alt="Sprite" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Sprite Lata 350ml</h3>
@@ -699,7 +699,7 @@
             <!-- Item 12: Guaraná Antarctica -->
             <article class="product-card" data-category="bebidas">
               <div class="product-img-wrapper">
-                <img src="assets/images/guarana.png" alt="Guaraná Antarctica 350ml" class="product-img" loading="lazy">
+                <img src="/assets/images/guarana.png" alt="Guaraná Antarctica 350ml" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Guaraná Antarctica 350ml</h3>
@@ -735,7 +735,7 @@
             <!-- Item 13: Brownie com Sorvete -->
             <article class="product-card" data-category="sobremesas">
               <div class="product-img-wrapper">
-                <img src="assets/images/dessert.jpg" alt="Brownie com Sorvete" class="product-img" loading="lazy">
+                <img src="/assets/images/dessert.jpg" alt="Brownie com Sorvete" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Brownie com Sorvete</h3>
@@ -758,7 +758,7 @@
             <!-- Item 14: Milkshake 8-Bit — Chocolate com Oreo -->
             <article class="product-card" data-category="sobremesas">
               <div class="product-img-wrapper">
-                <img src="assets/images/Milkshake8Bit.jpg" alt="Milkshake 8-Bit" class="product-img" loading="lazy">
+                <img src="/assets/images/Milkshake8Bit.jpg" alt="Milkshake 8-Bit" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Milkshake 8-Bit — Chocolate com Oreo</h3>
@@ -781,7 +781,7 @@
             <!-- Item 15: Cookie XP — Cookie com Sorvete -->
             <article class="product-card" data-category="sobremesas">
               <div class="product-img-wrapper">
-                <img src="assets/images/CookieXP.jpg" alt="Cookie XP" class="product-img" loading="lazy">
+                <img src="/assets/images/CookieXP.jpg" alt="Cookie XP" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Cookie XP — Cookie com Sorvete</h3>
@@ -804,7 +804,7 @@
             <!-- Item 16: Churros XP — Churros com Doce de Leite -->
             <article class="product-card" data-category="sobremesas">
               <div class="product-img-wrapper">
-                <img src="assets/images/ChurrosXP.jpg" alt="Churros com Doce de Leite" class="product-img" loading="lazy">
+                <img src="/assets/images/ChurrosXP.jpg" alt="Churros com Doce de Leite" class="product-img" loading="lazy">
               </div>
               <div class="product-content">
                 <h3 class="product-title">Churros XP — Churros com Doce de Leite</h3>
@@ -838,7 +838,7 @@
               <p>Total atual: <strong>R$ 0,00</strong> • Marque seus itens para enviar à cozinha</p>
             </div>
           </div>
-          <a href="pedido.html" class="btn btn-primary" title="Abrir comanda e fazer pedido na mesa">
+          <a href="/views/pedido.html" class="btn btn-primary" title="Abrir comanda e fazer pedido na mesa">
             Ver Pedido da Mesa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
           </a>
         </aside>
@@ -849,7 +849,7 @@
   </div>
 
   <!-- Primeiro as ações compartilhadas; depois o código específico desta tela. -->
-  <script src="assets/js/comum.js"></script>
-  <script src="assets/js/cardapio.js"></script>
+  <script src="/assets/js/comum.js"></script>
+  <script src="/assets/js/cardapio.js"></script>
 </body>
 </html>
